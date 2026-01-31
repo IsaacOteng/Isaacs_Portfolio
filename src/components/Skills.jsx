@@ -21,66 +21,99 @@ const Skills = () => {
     { language: "PostgreSQL", level: "Intermediate" },
   ];
 
+  const tools = [
+    { language: "Git", level: "Experienced" },
+    { language: "Docker", level: "Novice" },
+    { language: "VS Code", level: "Experienced" },
+    { language: "Figma", level: "Novice" },
+  ];
+
   return (
-    <section className="mx-4 sm:mx-8 md:mx-12 lg:mx-10 mb-30">
+    <section id="skills" className="mx-4 sm:mx-8 md:mx-12 lg:mx-10 mb-30">
       {/* TITLE */}
       <div className="text-center mb-12">
         <p className="text-3xl md:text-4xl text-green-700 font-bold">
-          Skills
+          Skills & Expertise
+        </p>
+        <p className="text-gray-600 text-sm md:text-base mt-2">
+          Proficient in modern technologies and tools
         </p>
       </div>
 
       {/* SKILL CATEGORIES */}
       <div
-        className="grid grid-cols-1
-                   lg:grid-cols-2
-                   gap-8"
+          className="grid grid-cols-1
+                    md:grid-cols-2
+                    lg:grid-cols-3
+                    gap-8"
       >
         {/* FRONTEND */}
-        <div className="bg-green-100 py-10 border border-green-800 rounded-3xl">
+        <div className="bg-linear-to-br from-green-50 to-green-100 py-10 border-2 border-green-300 rounded-3xl hover:shadow-2xl transition-all duration-300">
           <h1 className="text-center text-green-700 text-xl md:text-2xl font-bold mb-8">
             Frontend Development
           </h1>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 px-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 px-6">
             {frontend.map((item, index) => (
-              <div key={index} className="flex gap-3 items-start">
-                <Verified color="white" fill="green" />
+              <div key={index} className="flex gap-3 items-start hover:scale-x-105 hover:translate-x-2 transition-all">
+                <Verified color="white" fill="green" size={20} className="shrink-0" />
 
-                <p>
-                  <span className="font-bold text-base md:text-lg">
+                <div>
+                  <p className="font-bold text-base md:text-lg text-gray-800">
                     {item.language}
-                  </span>
-                  <br />
-                  <span className="text-gray-800 text-sm md:text-base">
+                  </p>
+                  <p className="text-gray-600 text-sm md:text-base">
                     {item.level}
-                  </span>
-                </p>
+                  </p>
+                </div>
               </div>
             ))}
           </div>
         </div>
 
         {/* BACKEND */}
-        <div className="bg-green-100 py-10 border border-green-800 rounded-3xl">
+        <div className="bg-linear-to-br from-green-50 to-green-100 py-10 border-2 border-green-300 rounded-3xl hover:shadow-2xl transition-all duration-300">
           <h1 className="text-center text-green-700 text-xl md:text-2xl font-bold mb-8">
             Backend Development
           </h1>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 px-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 px-6">
             {backend.map((item, index) => (
-              <div key={index} className="flex gap-3 items-start">
-                <Verified color="white" fill="green" />
+              <div key={index} className="flex gap-3 items-start hover:scale-x-105 hover:translate-x-2 transition-all">
+                <Verified color="white" fill="green" size={20} className="shrink-0" />
 
-                <p>
-                  <span className="font-bold text-base md:text-lg">
+                <div>
+                  <p className="font-bold text-base md:text-lg text-gray-800">
                     {item.language}
-                  </span>
-                  <br />
-                  <span className="text-gray-800 text-sm md:text-base">
+                  </p>
+                  <p className="text-gray-600 text-sm md:text-base">
                     {item.level}
-                  </span>
-                </p>
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* TOOLS & PLATFORMS */}
+        <div className="bg-linear-to-br from-green-50 to-green-100 py-10 border-2 border-green-300 rounded-3xl hover:shadow-2xl transition-all duration-300">
+          <h1 className="text-center text-green-700 text-xl md:text-2xl font-bold mb-8">
+            Tools & Platforms
+          </h1>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 px-6">
+            {tools.map((item, index) => (
+              <div key={index} className="flex gap-3 items-start hover:scale-x-105 hover:translate-x-2 transition-all">
+                <Verified color="white" fill="green" size={20} className="shrink-0" />
+
+                <div>
+                  <p className="font-bold text-base md:text-lg text-gray-800">
+                    {item.language}
+                  </p>
+                  <p className="text-gray-600 text-sm md:text-base">
+                    {item.level}
+                  </p>
+                </div>
               </div>
             ))}
           </div>

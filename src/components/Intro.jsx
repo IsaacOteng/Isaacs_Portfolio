@@ -1,113 +1,110 @@
 import React from "react";
-import { Dot } from "lucide-react";
+import pic from '../assets/pic.png'
+import { Dot, ArrowRight } from "lucide-react";
 
 const Intro = () => {
     return (
         <section
-        className="w-full mb-28 flex justify-center pt-10
-                    sm:pt-16 md:pt-20 lg:pt-24"
+        id="home"
+        className="w-ull mb-28 flex justify-center pt-10 mx-0 sm:mx-0 md:mx-3 lg:mx-0 xl:mx-0
+                    sm:pt-16 md:pt-20 lg:pt-15"
         >
-        {/* Card */}
         <div
-            className="relative w-full mx-4 sm:mx-8 md:mx-12 lg:mx-10 bg-white shadow-2xl rounded-3xl
+            className="relative w-full mx-4 sm:mx-8 md:mx-12 lg:mx-10 bg-linear-to-br from-white via-green-50 to-green-200 shadow-2xl rounded-3xl
                     flex flex-col md:flex-row overflow-visible"
         >
-            {/* LEFT: Text content */}
-            <div className="flex-1 p-6 sm:p-10 md:p-16 lg:p-20 pb-32 mb-10 md:mb-0 sm:mb-0  ">
-            <p className="text-lg md:text-xl lg:text-2xl font-bold mb-2">
-                Heyy, I'm Isaac Oteng.
-            </p>
+            <div className="flex-1 p-6 sm:p-10 md:p-16 lg:p-20 mb-10 md:mb-0 sm:mb-0  ">
+                <p className="text-lg md:text-xl lg:text-2xl font-bold mb-2 text-gray-600">
+                    Heyy, I'm Isaac Oteng.
+                </p>
+                <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-green-700 mb-2">
+                    Fullstack
+                </h1>
+                <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-gray-800 ">
+                    Software Engineer
+                </h2>
 
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-green-700">
-                Fullstack
-            </h1>
+                <p className="text-gray-700 text-base md:text-lg lg:text-xl max-w-3xl mb-8 leading-relaxed">
+                    Innovative problem solver with a passion for creating secure & scalable
+                    solutions. Leveraging cutting-edge technologies to craft intuitive user
+                    experiences and robust backend systems. Let's build the future of tech
+                    together!
+                </p>
 
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
-                Software Engineer
-            </h2>
-
-            <p className="text-gray-700 text-base md:text-lg lg:text-xl max-w-2xl mb-8">
-                Innovative problem solver with a passion for creating secure & scalable
-                solutions. Leveraging cutting-edge technologies to craft intuitive user
-                experiences and robust backend systems. Let's build the future of tech
-                together!
-            </p>
-
-            {/* Buttons */}
-            <div className="flex flex-wrap gap-4">
-                <button className="px-6 py-3 md:px-8 md:py-4 bg-black text-white rounded-xl hover:bg-gray-800 transition-all duration-300">
-                Hire Me!
-                </button>
-
-                <button className="px-4 py-3 md:px-6 md:py-4 flex items-center gap-1 text-green-700 bg-green-200/60 rounded-full border border-green-300 hover:bg-green-200 transition-all duration-300">
-                <Dot size={26} />
-                <span className="text-sm md:text-base lg:text-lg">Available</span>
-                </button>
-
-                <a
-                href="/src/assets/isaac_resume.pdf"
-                download
-                className="px-6 py-3 md:px-8 md:py-4 bg-green-700 text-white rounded-xl hover:opacity-90 transition-all duration-300"
-                >
-                Download CV
-                </a>
-            </div>
+                <div className="flex flex-wrap gap-4 mb-0 sm:mb-10 md: lg: xl:">
+                    <button className="px-4 py-2 md:px-6 md:py-2 bg-green-700 text-white rounded-xl hover:bg-green-800 hover:shadow-lg transition-all duration-300 font-semibold flex items-center gap-2">
+                        Hire Me!
+                        <ArrowRight size={20}/>
+                    </button>
+                    <button className="px-3 py-2 md:px-4 md:py-2 flex items-center gap-2 text-green-700 bg-green-200/60 rounded-full border border-green-300 hover:bg-green-200 transition-all duration-300 font-semibold">
+                        <Dot size={12} className="animate-pulse" />
+                        <span className="text-sm md:text-base lg:text-lg">Available for Projects</span>
+                    </button>
+                    <a
+                        href="https://drive.google.com/file/d/1BZp6jggB0OTTQWXGFji6Mji18WPvhXUt/view?usp=sharing"
+                        download
+                        target="_blank"
+                        className="px-6 py-3 md:px-8 md:py-4 bg-gray-900 text-white rounded-xl hover:bg-gray-800 transition-all duration-300 font-semibold"
+                        >
+                        Download CV
+                    </a>
+                </div>
             </div>
 
-            {/* RIGHT: Image */}
             <div
             className="relative flex-1 flex items-center justify-center
                         p-6 md:p-0
-                        -mt-12 sm:-mt-16 md:-mt-16 mb-5"
+                        -mt-23 sm:-mt-16 md:mt-16 lg:mt-22 xl:mt-0 mb-5"
             >
-            <img
-                src="./src/assets/pic.png"
-                alt="Isaac Junior"
-                className="w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg  
-                        object-contain z-10"
-            />
-
-            {/* Gradient fade */}
-            
+                <img
+                    src={pic}
+                    alt="Isaac Junior"
+                    className="w-full max-w-xs 
+                                sm:w-md sm:h-md sm:max-w-md 
+                                md:w-md md:h-md md:max-w-md 
+                                lg:w-lg lg:h-lg lg:max-w-lg  
+                                xl:w-full xl:h-md xl:max-w-lg  
+                            object-contain z-10 hover:scale-105 transition-transform duration-500"
+                />
             </div>
 
-            {/* EXPERIENCE OVERLAY — FULL WIDTH */}
             <div
             className="absolute -bottom-10 md:-bottom-10 left-1/2 -translate-x-1/2
                         w-full grid grid-cols-3 sm:grid-cols-3 gap-4
                         bg-linear-to-b from-transparent to-green-300
                         rounded-3xl p-6 shadow-lg z-30"
             >
-            <div className="bg-black text-white rounded-2xl text-center p-5">
-                <span className="text-2xl md:text-3xl lg:text-4xl font-extrabold">
-                3+
-                </span>
-                <p className="text-gray-400 text-sm md:text-base mt-1">
-                Years of Experience
-                </p>
-            </div>
+                <div className="bg-linear-to-br from-gray-800 to-black text-white rounded-2xl text-center p-5 hover:scale-105 transition-transform duration-300">
+                    <span className="text-2xl md:text-3xl lg:text-4xl font-extrabold">
+                    3+
+                    </span>
+                    <p className="text-gray-400 text-sm md:text-base mt-1">
+                    Years of Experience
+                    </p>
+                </div>
 
-            <div className="bg-black text-white rounded-2xl text-center p-5">
-                <span className="text-2xl md:text-3xl lg:text-4xl font-extrabold">
-                17+
-                </span>
-                <p className="text-gray-400 text-sm md:text-base mt-1">
-                Completed Projects
-                </p>
-            </div>
+                <div className="bg-linear-to-br from-gray-800 to-black text-white rounded-2xl text-center p-5 hover:scale-105 transition-transform duration-300">
+                    <span className="text-2xl md:text-3xl lg:text-4xl font-extrabold">
+                    17+
+                    </span>
+                    <p className="text-gray-400 text-sm md:text-base mt-1">
+                    Completed Projects
+                    </p>
+                </div>
 
-            <div className="bg-black text-white rounded-2xl text-center p-5">
-                <span className="text-2xl md:text-3xl lg:text-4xl font-extrabold">
-                100%
-                </span>
-                <p className="text-gray-400 text-sm md:text-base mt-1">
-                Client Satisfaction
-                </p>
-            </div>
+                <div className="bg-linear-to-br from-gray-800 to-black text-white rounded-2xl text-center p-5 hover:scale-105 transition-transform duration-300">
+                    <span className="text-2xl md:text-3xl lg:text-4xl font-extrabold">
+                    100%
+                    </span>
+                    <p className="text-gray-400 text-sm md:text-base mt-1">
+                    Client Satisfaction
+                    </p>
+                </div>
             </div>
         </div>
         </section>
     );
-    };
+}
 
 export default Intro;
+
