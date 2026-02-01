@@ -161,7 +161,7 @@ const Contact = () => {
                 <div className='mt-8 pt-8 border-t-2 border-green-200 text-center'>
                     <p className='text-gray-600 text-sm mb-2'>Prefer a quick call?</p>
                     <a 
-                        href='tel:+1234567890'
+                        href='tel:+233545573689'
                         className='inline-block px-6 py-2 border-2 border-green-600 text-green-700 font-semibold rounded-lg hover:bg-green-50 transition-colors'
                     >
                         Schedule a Call

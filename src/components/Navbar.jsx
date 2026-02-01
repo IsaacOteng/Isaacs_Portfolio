@@ -67,31 +67,33 @@ const Navbar = () => {
 
         {/* Mobile Menu Dropdown */}
         {isOpen && (
-            <div className='absolute top-full left-4 right-4 mt-2 bg-white border border-gray-300 rounded-2xl shadow-lg p-6 lg:hidden'>
+            <div className='absolute top-full left-4 right-4 mt-2 bg-linear-to-r from-green-200 via-green-50 to-green-200 border border-gray-300 rounded-2xl shadow-lg p-6 lg:hidden'>
                 <div className='flex flex-col gap-4'>
                     {navLinks.map((link) => (
                         <button
                             key={link.id}
                             onClick={() => scrollToSection(link.id)}
-                            className='text-left text-gray-700 hover:text-green-700 font-semibold transition-colors py-2'
+                            className='text-pretty ml-2 text-gray-700 hover:text-green-700 font-semibold transition-colors py-2'
                         >
                             {link.label}
                         </button>
                     ))}
-                    <div className='flex gap-4 py-4 border-t'>
+                    <div className='flex items-center justify-center gap-10 py-4 border-t'>
                         <a href='#' className='p-2 hover:bg-green-100 rounded-lg transition-colors'>
                             <HomeIcon size={20}/>
                         </a>
-                        <a href='#' className='p-2 hover:bg-green-100 rounded-lg transition-colors'>
+                        <a href='https://x.com/izaacjnr' className='p-2 hover:bg-green-100 rounded-lg transition-colors'>
                             <Twitter size={20}/>
                         </a>
-                        <a href='#' className='p-2 hover:bg-green-100 rounded-lg transition-colors'>
+                        <a href='https://github.com/IsaacOteng' className='p-2 hover:bg-green-100 rounded-lg transition-colors'>
                             <Github size={20}/>
                         </a>
                     </div>
-                    <button className='w-full px-4 py-2 bg-green-700 text-white rounded-xl hover:bg-green-800 transition-all font-semibold'>
-                        Let's Talk
-                    </button>
+                    <a href="https://wa.me/233545573689">
+                        <button className='w-full px-4 py-2 bg-green-700 text-white rounded-xl hover:bg-green-800 transition-all font-semibold'>
+                            Let's Talk
+                        </button>
+                    </a>
                 </div>
             </div>
         )}
