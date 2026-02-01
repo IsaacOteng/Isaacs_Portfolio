@@ -48,7 +48,7 @@ const Services = () => {
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 w-full mx-auto">
                 {projectcards.map((item, index) => (
-                    <AnimatedOnScroll key={index} className="border-2 border-gray-200 p-6 shadow-sm hover:shadow-2xl rounded-3xl transition-all duration-1000 hover:border-green-300 group" delay={index * 0.06}>
+                    <AnimatedOnScroll key={index} className="border-2 border-gray-200 p-6 bg-linear-to-br from-green-200 via-green-50 to-green-200 shadow-lg hover:shadow-2xl rounded-3xl transition-all duration-1000 hover:border-green-300 group" delay={index * 0.06}>
                         <div className='relative overflow-hidden rounded-3xl mb-5'>
                             <img src={item.projectimage} alt={item.projectname} className="w-full h-48 object-cover hover:scale-110 transition-transform duration-1000" />
                             <div className='absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center'>

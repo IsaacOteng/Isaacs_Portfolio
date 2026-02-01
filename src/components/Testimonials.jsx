@@ -53,7 +53,7 @@ const Testimonials = () => {
                 {testimonials.map((testimonial, i) => (
                     <AnimatedOnScroll
                         key={testimonial.id}
-                        className='bg-linear-to-br from-green-50 to-white rounded-2xl border-2 border-green-200 p-8 hover:shadow-xl transition-all duration-300 hover:border-green-400'
+                        className='bg-linear-to-b from-green-200 via-green-50 to-green-200 rounded-2xl border-2 border-green-200 p-8 hover:shadow-xl transition-all duration-300 hover:border-green-400'
                         delay={i * 0.06}
                     >
                         <Quote className='text-green-200 mb-4' size={32} />
@@ -87,7 +87,7 @@ const Testimonials = () => {
             </div>
 
             {/* Stats */}
-            <div className='grid grid-cols-3 gap-4 mt-12 bg-green-50 p-8 rounded-2xl border-2 border-green-200'>
+            <div className='grid grid-cols-3 gap-4 mt-12 bg-green-100 p-8 rounded-2xl border-2 border-green-200'>
                 <div className='text-center'>
                     <p className='text-3xl md:text-4xl font-bold text-green-700'>15+</p>
                     <p className='text-gray-600 text-sm mt-2'>Happy Clients</p>

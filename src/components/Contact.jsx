@@ -73,7 +73,7 @@ const Contact = () => {
             <div className='grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16'>
                 {/* Contact Methods */}
                 {contactMethods.map((method, index) => (
-                    <AnimatedOnScroll key={index} className='bg-linear-to-br from-green-50 to-white rounded-2xl border-2 border-green-200 p-8 hover:border-green-400 hover:shadow-lg transition-all duration-300 text-center hover:scale-105' delay={index * 0.06}>
+                    <AnimatedOnScroll key={index} className='bg-linear-to-t from-green-200 to-white rounded-2xl border-2 border-green-200 p-8 hover:border-green-400 hover:shadow-lg transition-all duration-300 text-center hover:scale-105' delay={index * 0.06}>
                         <a 
                         href={method.link}
                         >
@@ -90,7 +90,7 @@ const Contact = () => {
             </div>
 
             {/* Contact Fozrm */}
-            <AnimatedOnScroll className='max-w-2xl mx-auto bg-linear-to-br from-white to-green-50 rounded-2xl border-2 border-green-200 p-8 md:p-12' delay={0.06}>
+            <AnimatedOnScroll className='max-w-2xl mx-auto bg-linear-to-br from-white to-green-200 rounded-2xl border-2 border-green-200 p-8 md:p-12' delay={0.06}>
                 <div className='flex items-center gap-3 mb-8'>
                     <MessageSquare className='text-green-700' size={28} />
                     <h3 className='text-2xl font-bold text-gray-800'>Send Me a Message</h3>

@@ -42,7 +42,7 @@ const Navbar = () => {
             
             {/* Logo */}
             <div className='font-bold text-lg md:text-xl text-green-700'>
-                Portfolio
+                Isaac Jnr
             </div>
 
             {/* Desktop Menu */}
