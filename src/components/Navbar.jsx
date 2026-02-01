@@ -1,8 +1,10 @@
 import React, { useState } from 'react'
 import { FileText, Github, HomeIcon, Twitter, Menu, X } from 'lucide-react'
+import { useRef, useEffect } from 'react'
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false)
+    const dropdownRef = useRef(null)
 
     const scrollToSection = (id) => {
         const element = document.getElementById(id)
@@ -19,6 +21,19 @@ const Navbar = () => {
         { label: 'Projects', id: 'projects' },
         { label: 'Contact', id: 'contact' },
     ]
+
+    useEffect(() => {
+        const handleClickOutside = (event) => {
+            if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+                setIsOpen(false)
+            }
+        }
+
+        document.addEventListener('mousedown', handleClickOutside)
+        return () => {
+            document.removeEventListener('mousedown', handleClickOutside)
+        }
+    }, [])
 
     return (
     <>
@@ -67,7 +82,9 @@ const Navbar = () => {
 
         {/* Mobile Menu Dropdown */}
         {isOpen && (
-            <div className='absolute top-full left-4 right-4 mt-2 bg-linear-to-r from-green-200 via-green-50 to-green-200 border border-gray-300 rounded-2xl shadow-lg p-6 lg:hidden'>
+            <div 
+                ref={dropdownRef}
+                className='absolute top-full left-4 right-4 mt-2 bg-linear-to-r from-green-200 via-green-50 to-green-200 border border-gray-300 rounded-2xl shadow-lg p-6 lg:hidden'>
                 <div className='flex flex-col gap-4'>
                     {navLinks.map((link) => (
                         <button
