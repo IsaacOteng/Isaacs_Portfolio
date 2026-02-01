@@ -1,5 +1,6 @@
 import React from 'react'
 import { Star, Quote } from 'lucide-react'
+import AnimatedOnScroll from './AnimatedOnScroll' 
 
 const Testimonials = () => {
     const testimonials = [
@@ -49,10 +50,11 @@ const Testimonials = () => {
             </div>
 
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8'>
-                {testimonials.map((testimonial) => (
-                    <div 
+                {testimonials.map((testimonial, i) => (
+                    <AnimatedOnScroll
                         key={testimonial.id}
                         className='bg-linear-to-br from-green-50 to-white rounded-2xl border-2 border-green-200 p-8 hover:shadow-xl transition-all duration-300 hover:border-green-400'
+                        delay={i * 0.06}
                     >
                         <Quote className='text-green-200 mb-4' size={32} />
 
@@ -80,7 +82,7 @@ const Testimonials = () => {
                                 <p className='text-xs text-green-700 font-semibold'>{testimonial.company}</p>
                             </div>
                         </div>
-                    </div>
+                    </AnimatedOnScroll>
                 ))}
             </div>
 

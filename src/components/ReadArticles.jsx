@@ -2,6 +2,7 @@ import React from 'react'
 import Navbar from './Navbar'
 import Articles from './Articles'
 import { ArrowRight, Calendar, User } from 'lucide-react'
+import AnimatedOnScroll from './AnimatedOnScroll' 
 
 const ReadArticles = () => {
     const articles = [
@@ -49,11 +50,8 @@ const ReadArticles = () => {
             </div>
 
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8'>
-                {articles.map((article) => (
-                    <article 
-                        key={article.id}
-                        className='bg-white rounded-2xl border-2 border-gray-200 hover:border-green-300 overflow-hidden transition-all duration-300 hover:shadow-xl hover:scale-105 cursor-pointer group'
-                    >
+                {articles.map((article, index) => (
+                    <AnimatedOnScroll key={article.id} className='bg-white rounded-2xl border-2 border-gray-200 hover:border-green-300 overflow-hidden transition-all duration-300 hover:shadow-xl hover:scale-105 cursor-pointer group' delay={index * 0.06}>
                         {/* Category Badge */}
                         <div className='px-6 pt-6'>
                             <span className='inline-block px-3 py-1 bg-green-100 text-green-700 rounded-full text-xs font-semibold'>
@@ -96,7 +94,7 @@ const ReadArticles = () => {
                                 </a>
                             </div>
                         </div>
-                    </article>
+                    </AnimatedOnScroll>
                 ))}
             </div>
         </section>

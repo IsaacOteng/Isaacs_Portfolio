@@ -1,5 +1,6 @@
 import { Verified } from "lucide-react";
 import React from "react";
+import AnimatedOnScroll from './AnimatedOnScroll';
 
 const Skills = () => {
   const frontend = [
@@ -48,7 +49,7 @@ const Skills = () => {
                     gap-8"
       >
         {/* FRONTEND */}
-        <div className="bg-linear-to-br from-green-50 to-green-100 py-10 border-2 border-green-300 rounded-3xl hover:shadow-2xl transition-all duration-300">
+        <AnimatedOnScroll className="bg-linear-to-br from-green-50 to-green-100 py-10 border-2 border-green-300 rounded-3xl hover:shadow-2xl transition-all duration-300" delay={0.05}>
           <h1 className="text-center text-green-700 text-xl md:text-2xl font-bold mb-8">
             Frontend Development
           </h1>
@@ -69,10 +70,10 @@ const Skills = () => {
               </div>
             ))}
           </div>
-        </div>
+          </AnimatedOnScroll>
 
         {/* BACKEND */}
-        <div className="bg-linear-to-br from-green-50 to-green-100 py-10 border-2 border-green-300 rounded-3xl hover:shadow-2xl transition-all duration-300">
+        <AnimatedOnScroll className="bg-linear-to-br from-green-50 to-green-100 py-10 border-2 border-green-300 rounded-3xl hover:shadow-2xl transition-all duration-300" delay={0.12}>
           <h1 className="text-center text-green-700 text-xl md:text-2xl font-bold mb-8">
             Backend Development
           </h1>
@@ -93,10 +94,10 @@ const Skills = () => {
               </div>
             ))}
           </div>
-        </div>
+          </AnimatedOnScroll>
 
         {/* TOOLS & PLATFORMS */}
-        <div className="bg-linear-to-br from-green-50 to-green-100 py-10 border-2 border-green-300 rounded-3xl hover:shadow-2xl transition-all duration-300">
+        <AnimatedOnScroll className="bg-linear-to-br from-green-50 to-green-100 py-10 border-2 border-green-300 rounded-3xl hover:shadow-2xl transition-all duration-300" delay={0.19}>
           <h1 className="text-center text-green-700 text-xl md:text-2xl font-bold mb-8">
             Tools & Platforms
           </h1>
@@ -117,9 +118,10 @@ const Skills = () => {
               </div>
             ))}
           </div>
-        </div>
+          </AnimatedOnScroll>
       </div>
     </section>
+  
   );
 };
 

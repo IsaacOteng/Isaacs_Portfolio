@@ -6,6 +6,7 @@ import {
     UserRoundCheck
     } from "lucide-react";
     import React from "react";
+import AnimatedOnScroll from './AnimatedOnScroll';
     
     const About = () => {
         const aboutdetails = [
@@ -64,21 +65,18 @@ import {
                         gap-6 bg-linear-to-br from-green-400 via-green-100 to-green-400 p-6 rounded-2xl"
             >
             {aboutdetails.map((item, index) => (
-                <div
-                key={index}
-                className="min-h-32 rounded-xl bg-white
+                <AnimatedOnScroll key={index} className="min-h-32 rounded-xl bg-white
                             flex flex-col gap-5 justify-center items-center p-6
                             text-center border-5 border-green-100 hover:border-green-400 hover:shadow-lg 
-                            transition-all duration-300 hover:scale-105 cursor-pointer"
-                >
+                            transition-all duration-300 hover:scale-105 cursor-pointer" variant={index % 2 === 0 ? 'fade-right' : 'fade-left'} delay={index * 0.06}>
                 <div className="bg-green-700 rounded-full p-3 text-white hover:bg-green-800 transition-colors">
                     <item.icon size={28} />
                 </div>
-    
+
                 <p className="font-semibold text-base md:text-lg text-gray-800">
                     {item.title}
                 </p>
-                </div>
+                </AnimatedOnScroll>
             ))}
             </div>
         </section>

@@ -1,5 +1,6 @@
 import { ChevronRight, ExternalLink } from 'lucide-react'
 import React from 'react'
+import AnimatedOnScroll from './AnimatedOnScroll' 
 import mediaapi from '../assets/mediaapi.png'
 import nextstep from '../assets/nextstep.png'
 import finalocs from '../assets/finalocs.png'
@@ -47,7 +48,7 @@ const Services = () => {
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 w-full mx-auto">
                 {projectcards.map((item, index) => (
-                    <div key={index} className="border-2 border-gray-200 p-6 shadow-sm hover:shadow-2xl rounded-3xl transition-all duration-300 hover:border-green-300 group">
+                    <AnimatedOnScroll key={index} className="border-2 border-gray-200 p-6 shadow-sm hover:shadow-2xl rounded-3xl transition-all duration-300 hover:border-green-300 group" delay={index * 0.06}>
                         <div className='relative overflow-hidden rounded-3xl mb-5'>
                             <img src={item.projectimage} alt={item.projectname} className="w-full h-48 object-cover hover:scale-110 transition-transform duration-500" />
                             <div className='absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center'>
@@ -77,7 +78,7 @@ const Services = () => {
                             <ChevronRight size={20} className='group-hover/btn:translate-x-1 transition-transform'/>
                         </button>
                         </a>
-                    </div>
+                    </AnimatedOnScroll>
                 ))}
             </div>
             

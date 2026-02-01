@@ -1,5 +1,6 @@
 import React from 'react'
 import { ArrowRight, Calendar, User } from 'lucide-react'
+import AnimatedOnScroll from './AnimatedOnScroll' 
 
 const Articles = () => {
     const articles = [
@@ -43,11 +44,8 @@ const Articles = () => {
             </div>
 
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8'>
-                {articles.map((article) => (
-                    <article 
-                        key={article.id}
-                        className='bg-linear-to-tr from-green-50 via-white to-green-50 rounded-2xl border-2 border-gray-200 hover:border-green-300 overflow-hidden transition-all duration-300 hover:shadow-xl hover:scale-105 cursor-pointer group'
-                    >
+                {articles.map((article, index) => (
+                    <AnimatedOnScroll key={article.id} className='bg-linear-to-tr from-green-50 via-white to-green-50 rounded-2xl border-2 border-gray-200 hover:border-green-300 overflow-hidden transition-all duration-300 hover:shadow-xl hover:scale-105 cursor-pointer group' variant={index % 2 === 0 ? 'fade-right' : 'fade-left'} delay={index * 0.06}>
                         {/* Category Badge */}
                         <div className='px-6 pt-6'>
                             <span className='inline-block px-3 py-1 bg-green-100 text-green-700 rounded-full text-xs font-semibold'>
@@ -90,7 +88,7 @@ const Articles = () => {
                                 </a>
                             </div>
                         </div>
-                    </article>
+                    </AnimatedOnScroll>
                 ))}
             </div>
 

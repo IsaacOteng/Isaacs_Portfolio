@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { Mail, Phone, MapPin, Send, MessageSquare } from 'lucide-react'
 import { toast, Toaster } from 'react-hot-toast'
+import AnimatedOnScroll from './AnimatedOnScroll' 
 
 
 const Contact = () => {
@@ -72,11 +73,10 @@ const Contact = () => {
             <div className='grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16'>
                 {/* Contact Methods */}
                 {contactMethods.map((method, index) => (
-                    <a 
-                        key={index}
+                    <AnimatedOnScroll key={index} className='bg-linear-to-br from-green-50 to-white rounded-2xl border-2 border-green-200 p-8 hover:border-green-400 hover:shadow-lg transition-all duration-300 text-center hover:scale-105' delay={index * 0.06}>
+                        <a 
                         href={method.link}
-                        className='bg-linear-to-br from-green-50 to-white rounded-2xl border-2 border-green-200 p-8 hover:border-green-400 hover:shadow-lg transition-all duration-300 text-center hover:scale-105'
-                    >
+                        >
                         <div className='flex justify-center mb-4'>
                             <div className='p-4 bg-green-100 rounded-full'>
                                 <method.icon size={32} className='text-green-700' />
@@ -84,12 +84,13 @@ const Contact = () => {
                         </div>
                         <h3 className='text-lg font-bold text-gray-800 mb-2'>{method.title}</h3>
                         <p className='text-green-700 font-semibold'>{method.value}</p>
-                    </a>
+                        </a>
+                    </AnimatedOnScroll>
                 ))}
             </div>
 
-            {/* Contact Form */}
-            <div className='max-w-2xl mx-auto bg-linear-to-br from-white to-green-50 rounded-2xl border-2 border-green-200 p-8 md:p-12'>
+            {/* Contact Fozrm */}
+            <AnimatedOnScroll className='max-w-2xl mx-auto bg-linear-to-br from-white to-green-50 rounded-2xl border-2 border-green-200 p-8 md:p-12' delay={0.06}>
                 <div className='flex items-center gap-3 mb-8'>
                     <MessageSquare className='text-green-700' size={28} />
                     <h3 className='text-2xl font-bold text-gray-800'>Send Me a Message</h3>
@@ -167,10 +168,10 @@ const Contact = () => {
                         Schedule a Call
                     </a>
                 </div>
-            </div>
+                </AnimatedOnScroll>
 
             {/* CTA Section */}
-            <div className='mt-16 bg-linear-to-r from-green-600 to-green-700 rounded-2xl p-12 text-white text-center'>
+            <AnimatedOnScroll className='mt-16 bg-linear-to-r from-green-600 to-green-700 rounded-2xl p-12 text-white text-center' delay={0.12}>
                 <h3 className='text-2xl md:text-3xl font-bold mb-4'>Ready to Start Your Project?</h3>
                 <p className='text-green-100 mb-8 max-w-2xl mx-auto'>
                     Whether you have a small project or a large enterprise solution, I'm ready to help bring your ideas to life.
@@ -180,7 +181,7 @@ const Contact = () => {
                         Get Started Now
                     </button>
                 </a>
-            </div>
+            </AnimatedOnScroll>
         </section>
     )
 }

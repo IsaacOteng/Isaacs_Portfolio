@@ -1,6 +1,7 @@
 import React from "react";
 import pic from '../assets/pic.png'
 import { Dot, ArrowRight } from "lucide-react";
+import AnimatedOnScroll from './AnimatedOnScroll';
 
 const Intro = () => {
     return (
@@ -13,7 +14,7 @@ const Intro = () => {
             className="relative w-full mx-4 sm:mx-8 md:mx-12 lg:mx-10 bg-linear-to-br from-white via-green-50 to-green-200 shadow-2xl rounded-3xl
                     flex flex-col md:flex-row overflow-visible"
         >
-            <div className="flex-1 p-6 sm:p-10 md:p-16 lg:p-20 mb-10 md:mb-0 sm:mb-0  ">
+            <AnimatedOnScroll className="flex-1 p-6 sm:p-10 md:p-16 lg:p-20 mb-10 md:mb-0 sm:mb-0" delay={0.05}>
                 <p className="text-lg md:text-xl lg:text-2xl font-bold mb-2 text-gray-600">
                     Heyy, I'm Isaac Oteng.
                 </p>
@@ -49,13 +50,12 @@ const Intro = () => {
                         Download CV
                     </a>
                 </div>
-            </div>
+                </AnimatedOnScroll>
 
-            <div
-            className="relative flex-1 flex items-center justify-center
+            <AnimatedOnScroll className="relative flex-1 flex items-center justify-center
                         p-6 md:p-0
-                        -mt-23 sm:-mt-16 md:mt-16 lg:mt-22 xl:mt-0 mb-5"
-            >
+                        -mt-23 sm:-mt-16 md:mt-16 lg:mt-22 xl:mt-0 mb-5" delay={0.15}>
+
                 <img
                     src={pic}
                     alt="Isaac Junior"
@@ -66,7 +66,7 @@ const Intro = () => {
                                 xl:w-full xl:h-md xl:max-w-lg  
                             object-contain z-10 hover:scale-105 transition-transform duration-500"
                 />
-            </div>
+                </AnimatedOnScroll>
 
             <div
             className="absolute -bottom-10 md:-bottom-10 left-1/2 -translate-x-1/2
@@ -74,32 +74,32 @@ const Intro = () => {
                         bg-linear-to-b from-transparent to-green-300
                         rounded-3xl p-6 shadow-lg z-30"
             >
-                <div className="bg-linear-to-br from-gray-800 to-black text-white rounded-2xl text-center p-5 hover:scale-105 transition-transform duration-300">
+                <AnimatedOnScroll className="bg-linear-to-br from-gray-800 to-black text-white rounded-2xl text-center p-5 hover:scale-105 transition-transform duration-300" delay={0.25}>
                     <span className="text-2xl md:text-3xl lg:text-4xl font-extrabold">
                     3+
                     </span>
                     <p className="text-gray-400 text-sm md:text-base mt-1">
                     Years of Experience
                     </p>
-                </div>
+                </AnimatedOnScroll>
 
-                <div className="bg-linear-to-br from-gray-800 to-black text-white rounded-2xl text-center p-5 hover:scale-105 transition-transform duration-300">
+                <AnimatedOnScroll className="bg-linear-to-br from-gray-800 to-black text-white rounded-2xl text-center p-5 hover:scale-105 transition-transform duration-300" delay={0.32}>
                     <span className="text-2xl md:text-3xl lg:text-4xl font-extrabold">
                     17+
                     </span>
                     <p className="text-gray-400 text-sm md:text-base mt-1">
                     Completed Projects
                     </p>
-                </div>
+                </AnimatedOnScroll>
 
-                <div className="bg-linear-to-br from-gray-800 to-black text-white rounded-2xl text-center p-5 hover:scale-105 transition-transform duration-300">
+                <AnimatedOnScroll className="bg-linear-to-br from-gray-800 to-black text-white rounded-2xl text-center p-5 hover:scale-105 transition-transform duration-300" delay={0.39}>
                     <span className="text-2xl md:text-3xl lg:text-4xl font-extrabold">
                     100%
                     </span>
                     <p className="text-gray-400 text-sm md:text-base mt-1">
                     Client Satisfaction
                     </p>
-                </div>
+                </AnimatedOnScroll>
             </div>
         </div>
         </section>
