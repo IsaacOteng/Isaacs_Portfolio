@@ -1,34 +1,10 @@
 import React, { useState } from 'react'
 import { Mail, Phone, MapPin, Send, MessageSquare } from 'lucide-react'
+import { toast, Toaster } from 'react-hot-toast'
+
 
 const Contact = () => {
-    const [formData, setFormData] = useState({
-        name: '',
-        email: '',
-        subject: '',
-        message: ''
-    })
-
     const [submitted, setSubmitted] = useState(false)
-
-    const handleChange = (e) => {
-        const { name, value } = e.target
-        setFormData(prev => ({
-            ...prev,
-            [name]: value
-        }))
-    }
-
-    const handleSubmit = (e) => {
-        e.preventDefault()
-        // Here you would typically send the form data to a backend
-        console.log('Form submitted:', formData)
-        setSubmitted(true)
-        setTimeout(() => {
-            setSubmitted(false)
-            setFormData({ name: '', email: '', subject: '', message: '' })
-        }, 3000)
-    }
 
     const contactMethods = [
         {
@@ -51,8 +27,43 @@ const Contact = () => {
         }
     ]
 
+    const handleSubmit = async (e) => {
+        e.preventDefault()
+        const form = e.target
+
+        const formData = new FormData(form)
+
+        try {
+            const response = await fetch("https://formspree.io/f/xvzqpdzz", {
+                method: "POST",
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            })
+
+            if (response.ok) {
+                setSubmitted(true)
+                toast.success("Message sent successfully!")
+                form.reset()
+                setTimeout(() => setSubmitted(false), 3000)
+            } else {
+                toast.error("Something went wrong. Please try again.")
+                const data = await response.json()
+                console.error("Formspree error:", data)
+            }
+        } catch (err) {
+            toast.error("Failed to send message. Please try again.")
+            console.error("Form submission failed:", err)
+        }
+    }
+
     return (
         <section id="contact" className='mx-4 sm:mx-8 md:mx-12 lg:mx-10 mb-40'>
+            <Toaster
+                position="bottom-center"
+                reverseOrder={true}
+            />
             <div className='text-center mb-12'>
                 <p className='text-3xl md:text-4xl text-green-700 font-bold'>Let's Work Together</p>
                 <p className='text-gray-600 text-sm md:text-base mt-2'>Have a project in mind? Get in touch!</p>
@@ -97,8 +108,6 @@ const Contact = () => {
                         <input
                             type='text'
                             name='name'
-                            value={formData.name}
-                            onChange={handleChange}
                             required
                             placeholder='Your name'
                             className='w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-green-500 transition-colors'
@@ -110,8 +119,6 @@ const Contact = () => {
                         <input
                             type='email'
                             name='email'
-                            value={formData.email}
-                            onChange={handleChange}
                             required
                             placeholder='your@gmail.com'
                             className='w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-green-500 transition-colors'
@@ -123,8 +130,6 @@ const Contact = () => {
                         <input
                             type='text'
                             name='subject'
-                            value={formData.subject}
-                            onChange={handleChange}
                             required
                             placeholder='Project inquiry'
                             className='w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-green-500 transition-colors'
@@ -135,8 +140,6 @@ const Contact = () => {
                         <label className='block text-gray-800 font-semibold mb-2'>Message</label>
                         <textarea
                             name='message'
-                            value={formData.message}
-                            onChange={handleChange}
                             required
                             placeholder='Tell me about your project...'
                             rows='6'
