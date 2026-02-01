@@ -37,10 +37,10 @@ const Navbar = () => {
                     <a href='#' className='hover:text-green-700 hover:scale-125 transition-all duration-700'>
                         <HomeIcon size={24}/>
                     </a>
-                    <a href='https://twitter.com' target='_blank' rel='noreferrer' className='hover:text-green-700 hover:scale-125 transition-all duration-700'>
+                    <a href='https://x.com/izaacjnr' target='_blank' rel='noreferrer' className='hover:text-green-700 hover:scale-125 transition-all duration-700'>
                         <Twitter size={24}/>
                     </a>
-                    <a href='https://github.com' target='_blank' rel='noreferrer' className='hover:text-green-700 hover:scale-125 transition-all duration-700'>
+                    <a href='https://github.com/IsaacOteng' target='_blank' rel='noreferrer' className='hover:text-green-700 hover:scale-125 transition-all duration-700'>
                         <Github size={24}/>
                     </a>
                     <a href='https://drive.google.com/file/d/1BZp6jggB0OTTQWXGFji6Mji18WPvhXUt/view?usp=sharing' target='_blank' className='hover:text-green-700 hover:scale-125 transition-all duration-700'>
@@ -49,9 +49,11 @@ const Navbar = () => {
                 </div>
                 <span className='opacity-30'>|</span>
 
+                <a href="https://wa.me/233545573689" target='_blank'>
                 <button className='px-6 py-2 bg-green-700 text-white rounded-xl hover:bg-green-800 transition-all duration-300 font-semibold'>
                     Let's Talk
                 </button>
+                </a>
             </div>
 
             {/* Mobile Menu Button */}
