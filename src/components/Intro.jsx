@@ -74,7 +74,7 @@ const Intro = () => {
                         bg-linear-to-b from-transparent to-green-300
                         rounded-3xl p-6 shadow-lg z-30"
             >
-                <AnimatedOnScroll className="bg-linear-to-br from-gray-800 to-black text-white rounded-2xl text-center p-5 hover:scale-105 transition-transform duration-300" delay={0.25}>
+                <AnimatedOnScroll className="bg-linear-to-br from-gray-800 to-black text-white rounded-2xl text-center p-5 hover:scale-105 duration-1000 transition-all" delay={0.25}>
                     <span className="text-2xl md:text-3xl lg:text-4xl font-extrabold">
                     3+
                     </span>
@@ -83,7 +83,7 @@ const Intro = () => {
                     </p>
                 </AnimatedOnScroll>
 
-                <AnimatedOnScroll className="bg-linear-to-br from-gray-800 to-black text-white rounded-2xl text-center p-5 hover:scale-105 transition-transform duration-300" delay={0.32}>
+                <AnimatedOnScroll className="bg-linear-to-br from-gray-800 to-black text-white rounded-2xl text-center p-5 hover:scale-105 duration-1000 transition-all" delay={0.4}>
                     <span className="text-2xl md:text-3xl lg:text-4xl font-extrabold">
                     17+
                     </span>
@@ -92,7 +92,7 @@ const Intro = () => {
                     </p>
                 </AnimatedOnScroll>
 
-                <AnimatedOnScroll className="bg-linear-to-br from-gray-800 to-black text-white rounded-2xl text-center p-5 hover:scale-105 transition-transform duration-300" delay={0.39}>
+                <AnimatedOnScroll className="bg-linear-to-br from-gray-800 to-black text-white rounded-2xl text-center p-5 hover:scale-105 duration-1000 transition-all" delay={0.55}>
                     <span className="text-2xl md:text-3xl lg:text-4xl font-extrabold">
                     100%
                     </span>
