@@ -42,9 +42,8 @@ const Intro = () => {
                         <span className="text-sm md:text-base lg:text-lg">Available for Projects</span>
                     </button>
                     <a
-                        href="https://drive.google.com/file/d/1BZp6jggB0OTTQWXGFji6Mji18WPvhXUt/view?usp=sharing"
-                        download
-                        target="_blank"
+                        href="/isaac-oteng-resume.pdf"
+                        download="Isaac Oteng Resume.pdf"
                         className="px-6 py-3 md:px-8 md:py-4 bg-gray-900 text-white rounded-xl hover:bg-gray-800 transition-all duration-300 font-semibold"
                         >
                         Download CV

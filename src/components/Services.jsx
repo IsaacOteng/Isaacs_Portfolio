@@ -5,23 +5,26 @@ import mediaapi from '../assets/mediaapi.png'
 import nextstep from '../assets/nextstep.png'
 import finalocs from '../assets/finalocs.png'
 import extension from '../assets/extension.png'
+import tertitask from '../assets/tertitask.png'
+import traveltogether from '../assets/traveltogether.png'
+
 
 const Services = () => {
 
     const projectcards = [
         {
-            projectname : "Social Media API",
-            projectimage: mediaapi,
-            projectdescription : "API sourced from Spotify for the creation of Music Posts...",
-            link : "https://social-media-api-ep3g.onrender.com/",
-            tags: ["React", "API", "Spotify"]
+            projectname : "Tertitask",
+            projectimage: tertitask,
+            projectdescription : "A full-stack freelance marketplace with task management, integrated payments, real-time conversations, and job listings.",
+            link : "https://tertitask.vercel.app",
+            tags: ["Django", "React", "Paystack", "Firebase", "WebSockets"]
         },
         {
-            projectname : "Next Step",
-            projectimage: nextstep,
-            projectdescription : "A platform for students and fresh graduates gain internships and jobs... ",
-            link : "https://github.com/IsaacOteng/Next-Step",
-            tags: ["React", "Unstop.com", "Education"]
+            projectname : "Travel Together",
+            projectimage: traveltogether,
+            projectdescription : "A full-stack travel platform connecting travelers to plan and share journeys together.",
+            link : "https://github.com/IsaacOteng/Travel_Together",
+            tags: ["Django", "React", "Firebase", "Brevo", "Celery", "WebSockets", "OpenStreetMap"]
         },
         {
             projectname : "finalocs",
@@ -31,11 +34,25 @@ const Services = () => {
             tags: ["React", "E-commerce", "Bookings"]
         },
         {
+            projectname : "Social Media API",
+            projectimage: mediaapi,
+            projectdescription : "API sourced from Spotify for the creation of Music Posts...",
+            link : "https://social-media-api-ep3g.onrender.com/",
+            tags: ["React", "API", "Spotify"]
+        },
+        {
             projectname : "Browser Extensions",
             projectimage: extension,
             projectdescription : "An Extension toggle UI for a Browser. Enabling or disabling extensions...",
             link : "https://github.com/IsaacOteng/Browser_Extension_UI",
             tags: ["JavaScript", "Browser", "UI/UX"]
+        },
+        {
+            projectname : "Next Step",
+            projectimage: nextstep,
+            projectdescription : "A platform for students and fresh graduates gain internships and jobs... ",
+            link : "https://github.com/IsaacOteng/Next-Step",
+            tags: ["React", "Unstop.com", "Education"]
         }
     ]
 

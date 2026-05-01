@@ -58,7 +58,7 @@ const Navbar = () => {
                     <a href='https://github.com/IsaacOteng' target='_blank' rel='noreferrer' className='hover:text-green-700 hover:scale-125 transition-all duration-700'>
                         <Github size={24}/>
                     </a>
-                    <a href='https://drive.google.com/file/d/1BZp6jggB0OTTQWXGFji6Mji18WPvhXUt/view?usp=sharing' target='_blank' className='hover:text-green-700 hover:scale-125 transition-all duration-700'>
+                    <a href='/isaac-oteng-resume.pdf' download="Isaac Oteng Resume.pdf" className='hover:text-green-700 hover:scale-125 transition-all duration-700'>
                         <FileText size={24}/>
                     </a>
                 </div>

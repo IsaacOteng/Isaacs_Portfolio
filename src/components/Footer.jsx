@@ -30,10 +30,9 @@ const Footer = () => {
                     <div>
                         <h3 className='text-2xl font-bold text-green-700 mb-3'>Isaac Oteng</h3>
                         <p className='text-gray-600 text-sm mb-4'>Fullstack Software Engineer crafting elegant solutions</p>
-                        <a 
-                            href="https://drive.google.com/file/d/1BZp6jggB0OTTQWXGFji6Mji18WPvhXUt/view?usp=sharingf" 
-                            target='_blank'
-                            download 
+                        <a
+                            href="/isaac-oteng-resume.pdf"
+                            download="Isaac Oteng Resume.pdf"
                             className='inline-flex items-center gap-2 px-4 py-2 bg-green-700 text-white rounded-lg hover:bg-green-800 transition-colors font-semibold text-sm'
                         >
                             <Download size={16}/>
