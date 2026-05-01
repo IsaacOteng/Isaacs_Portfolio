@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@variant dark (&:is(.dark, .dark *));
 
 @layer base {
     html {
@@ -11,126 +12,84 @@
 }
 
 @layer components {
-    /* Animations */
     @keyframes fadeInUp {
-        from {
-            opacity: 0;
-            transform: translateY(20px);
-        }
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
+        from { opacity: 0; transform: translateY(20px); }
+        to   { opacity: 1; transform: translateY(0); }
     }
 
     @keyframes slideInFromLeft {
-        from {
-            opacity: 0;
-            transform: translateX(-30px);
-        }
-        to {
-            opacity: 1;
-            transform: translateX(0);
-        }
+        from { opacity: 0; transform: translateX(-30px); }
+        to   { opacity: 1; transform: translateX(0); }
     }
 
     @keyframes slideInFromRight {
-        from {
-            opacity: 0;
-            transform: translateX(30px);
-        }
-        to {
-            opacity: 1;
-            transform: translateX(0);
-        }
+        from { opacity: 0; transform: translateX(30px); }
+        to   { opacity: 1; transform: translateX(0); }
     }
 
     @keyframes pulse-soft {
-        0%, 100% {
-            opacity: 1;
-        }
-        50% {
-            opacity: 0.7;
-        }
+        0%, 100% { opacity: 1; }
+        50%       { opacity: 0.7; }
     }
 
-    /* Utility Classes */
-    .animate-fadeInUp {
-        animation: fadeInUp 0.6s ease-out;
+    @keyframes float {
+        0%, 100% { transform: translateY(0px); }
+        50%       { transform: translateY(-14px); }
     }
 
-    .animate-slideInLeft {
-        animation: slideInFromLeft 0.6s ease-out;
+    @keyframes blob {
+        0%, 100% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; transform: scale(1); }
+        33%       { border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%; transform: scale(1.05); }
+        66%       { border-radius: 50% 50% 40% 60% / 40% 50% 60% 50%; transform: scale(0.97); }
     }
 
-    .animate-slideInRight {
-        animation: slideInFromRight 0.6s ease-out;
+    @keyframes shimmer {
+        0%   { background-position: -200% center; }
+        100% { background-position: 200% center; }
     }
 
-    .animate-pulse-soft {
-        animation: pulse-soft 2s ease-in-out infinite;
-    }
+    .animate-fadeInUp     { animation: fadeInUp 0.6s ease-out; }
+    .animate-slideInLeft  { animation: slideInFromLeft 0.6s ease-out; }
+    .animate-slideInRight { animation: slideInFromRight 0.6s ease-out; }
+    .animate-pulse-soft   { animation: pulse-soft 2s ease-in-out infinite; }
+    .animate-float        { animation: float 5s ease-in-out infinite; }
+    .animate-blob         { animation: blob 9s ease-in-out infinite; }
 
     /* Custom Scrollbar */
-    ::-webkit-scrollbar {
-        width: 10px;
-    }
-
-    ::-webkit-scrollbar-track {
-        @apply bg-gray-100;
-    }
-
-    ::-webkit-scrollbar-thumb {
-        @apply bg-green-600 rounded-full;
-    }
-
-    ::-webkit-scrollbar-thumb:hover {
-        @apply bg-green-700;
-    }
+    ::-webkit-scrollbar       { width: 8px; }
+    ::-webkit-scrollbar-track { @apply bg-gray-100 dark:bg-gray-900; }
+    ::-webkit-scrollbar-thumb { @apply bg-green-600 rounded-full; }
+    ::-webkit-scrollbar-thumb:hover { @apply bg-green-700; }
 
     /* Smooth Transitions */
-    * {
-        @apply transition-all duration-300 ease-out;
-    }
+    * { @apply transition-all duration-300 ease-out; }
 
-    /* Button Styles */
-    button {
-        @apply outline-none;
-    }
+    button { @apply outline-none; }
+    a      { @apply text-inherit no-underline; }
 
-    /* Link Styles */
-    a {
-        @apply text-inherit no-underline;
-    }
-
-    /* Selection Color */
-    ::selection {
-        @apply bg-green-200 text-gray-900;
-    }
+    ::selection { @apply bg-green-200 text-gray-900; }
 }
 
 @layer utilities {
-    /* Gradient Text */
     .gradient-text {
         @apply bg-linear-to-r from-green-600 to-green-700 bg-clip-text text-transparent;
     }
 
-    /* Container */
-    .container-custom {
-        @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+    .container-custom { @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8; }
+
+    .card-hover { @apply hover:shadow-2xl hover:scale-105 hover:border-green-400 transition-all duration-300; }
+
+    .flex-center { @apply flex items-center justify-center; }
+
+    .glow-green-hover:hover {
+        box-shadow: 0 0 35px rgba(34, 197, 94, 0.18);
     }
 
-    /* Card Hover Effect */
-    .card-hover {
-        @apply hover:shadow-2xl hover:scale-105 hover:border-green-400 transition-all duration-300;
+    .glass-light {
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
     }
 
-    /* Flex Center */
-    .flex-center {
-        @apply flex items-center justify-center;
-    }
-
-    /* Text Truncate Multi-line */
     .line-clamp-2 {
         @apply overflow-hidden text-ellipsis;
         display: -webkit-box;

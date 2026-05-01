@@ -1,6 +1,6 @@
 import React from 'react'
 import { Star, Quote } from 'lucide-react'
-import AnimatedOnScroll from './AnimatedOnScroll' 
+import AnimatedOnScroll from './AnimatedOnScroll'
 
 const Testimonials = () => {
     const testimonials = [
@@ -45,18 +45,23 @@ const Testimonials = () => {
     return (
         <section className='mx-4 sm:mx-8 md:mx-12 lg:mx-10 mb-40'>
             <div className='text-center mb-12'>
-                <p className='text-3xl md:text-4xl text-green-700 font-bold'>Client Testimonials</p>
-                <p className='text-gray-600 text-sm md:text-base mt-2'>What clients say about working with me</p>
+                <p className='text-3xl md:text-4xl text-green-700 dark:text-green-400 font-bold'>Client Testimonials</p>
+                <p className='text-gray-600 dark:text-gray-400 text-sm md:text-base mt-2'>What clients say about working with me</p>
             </div>
 
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8'>
                 {testimonials.map((testimonial, i) => (
                     <AnimatedOnScroll
                         key={testimonial.id}
-                        className='bg-linear-to-b from-green-200 via-green-50 to-green-200 rounded-2xl border-2 border-green-200 p-8 hover:shadow-xl transition-all duration-300 hover:border-green-400'
+                        className='bg-linear-to-b from-green-200 via-green-50 to-green-200
+                                   dark:from-gray-800 dark:via-gray-900 dark:to-gray-800
+                                   rounded-2xl border-2 border-green-200 dark:border-gray-700
+                                   p-8 hover:shadow-xl hover:shadow-green-200/40 dark:hover:shadow-green-900/20
+                                   hover:border-green-400 dark:hover:border-green-600
+                                   glow-green-hover hover:-translate-y-1'
                         delay={i * 0.06}
                     >
-                        <Quote className='text-green-200 mb-4' size={32} />
+                        <Quote className='text-green-200 dark:text-green-800 mb-4' size={32} />
 
                         <div className='flex gap-1 mb-4'>
                             {[...Array(testimonial.rating)].map((_, i) => (
@@ -64,42 +69,37 @@ const Testimonials = () => {
                             ))}
                         </div>
 
-                        {/* Testimonial Content */}
-                        <p className='text-gray-700 text-base leading-relaxed mb-6'>
+                        <p className='text-gray-700 dark:text-gray-300 text-base leading-relaxed mb-6'>
                             "{testimonial.content}"
                         </p>
 
-                        {/* Author */}
-                        <div className='flex items-center gap-4 pt-6 border-t border-green-200'>
-                            <img 
-                                src={testimonial.image} 
+                        <div className='flex items-center gap-4 pt-6 border-t border-green-200 dark:border-gray-700'>
+                            <img
+                                src={testimonial.image}
                                 alt={testimonial.name}
-                                className='w-12 h-12 rounded-full border-2 border-green-300'
+                                className='w-12 h-12 rounded-full border-2 border-green-300 dark:border-green-600 hover:scale-110'
                             />
                             <div>
-                                <p className='font-bold text-gray-800'>{testimonial.name}</p>
-                                <p className='text-sm text-gray-600'>{testimonial.role}</p>
-                                <p className='text-xs text-green-700 font-semibold'>{testimonial.company}</p>
+                                <p className='font-bold text-gray-800 dark:text-gray-100'>{testimonial.name}</p>
+                                <p className='text-sm text-gray-600 dark:text-gray-400'>{testimonial.role}</p>
+                                <p className='text-xs text-green-700 dark:text-green-400 font-semibold'>{testimonial.company}</p>
                             </div>
                         </div>
                     </AnimatedOnScroll>
                 ))}
             </div>
 
-            {/* Stats */}
-            <div className='grid grid-cols-3 gap-4 mt-12 bg-green-100 p-8 rounded-2xl border-2 border-green-200'>
-                <div className='text-center'>
-                    <p className='text-3xl md:text-4xl font-bold text-green-700'>15+</p>
-                    <p className='text-gray-600 text-sm mt-2'>Happy Clients</p>
-                </div>
-                <div className='text-center'>
-                    <p className='text-3xl md:text-4xl font-bold text-green-700'>4.9/5</p>
-                    <p className='text-gray-600 text-sm mt-2'>Avg. Rating</p>
-                </div>
-                <div className='text-center'>
-                    <p className='text-3xl md:text-4xl font-bold text-green-700'>100%</p>
-                    <p className='text-gray-600 text-sm mt-2'>Satisfaction</p>
-                </div>
+            <div className='grid grid-cols-3 gap-4 mt-12 bg-green-100 dark:bg-gray-800 p-8 rounded-2xl border-2 border-green-200 dark:border-gray-700'>
+                {[
+                    { value: '15+',  label: 'Happy Clients' },
+                    { value: '4.9/5',label: 'Avg. Rating' },
+                    { value: '100%', label: 'Satisfaction' },
+                ].map((stat, i) => (
+                    <div key={i} className='text-center hover:scale-105 cursor-default'>
+                        <p className='text-3xl md:text-4xl font-bold text-green-700 dark:text-green-400'>{stat.value}</p>
+                        <p className='text-gray-600 dark:text-gray-400 text-sm mt-2'>{stat.label}</p>
+                    </div>
+                ))}
             </div>
         </section>
     )

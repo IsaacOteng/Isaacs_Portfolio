@@ -1,6 +1,6 @@
 import { ChevronRight, ExternalLink } from 'lucide-react'
 import React from 'react'
-import AnimatedOnScroll from './AnimatedOnScroll' 
+import AnimatedOnScroll from './AnimatedOnScroll'
 import mediaapi from '../assets/mediaapi.png'
 import nextstep from '../assets/nextstep.png'
 import finalocs from '../assets/finalocs.png'
@@ -60,45 +60,58 @@ const Services = () => {
         <>
         <section id="projects" className='mx-4 sm:mx-8 md:mx-12 lg:mx-10 mb-40'>
             <div className='text-center mb-12'>
-                <p className='text-3xl md:text-4xl text-green-700 font-bold'>Featured Projects</p>
-                <p className='text-gray-600 text-sm md:text-base mt-2'>Showcasing my recent work and expertise</p>
+                <p className='text-3xl md:text-4xl text-green-700 dark:text-green-400 font-bold'>Featured Projects</p>
+                <p className='text-gray-600 dark:text-gray-400 text-sm md:text-base mt-2'>Showcasing my recent work and expertise</p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 w-full mx-auto">
                 {projectcards.map((item, index) => (
-                    <AnimatedOnScroll key={index} className="border-2 border-gray-200 p-6 bg-linear-to-br from-green-200 via-green-50 to-green-200 shadow-lg hover:shadow-2xl rounded-3xl transition-all duration-1000 hover:border-green-300 group" delay={index * 0.06}>
+                    <AnimatedOnScroll
+                        key={index}
+                        className="border-2 border-gray-200 dark:border-gray-700 p-6
+                                   bg-linear-to-br from-green-200 via-green-50 to-green-200
+                                   dark:from-gray-800 dark:via-gray-900 dark:to-gray-800
+                                   shadow-lg hover:shadow-2xl hover:shadow-green-200/50 dark:hover:shadow-green-900/20
+                                   rounded-3xl hover:border-green-300 dark:hover:border-green-600
+                                   glow-green-hover group"
+                        delay={index * 0.06}
+                    >
                         <div className='relative overflow-hidden rounded-3xl mb-5'>
-                            <img src={item.projectimage} alt={item.projectname} className="w-full h-48 object-cover hover:scale-110 transition-transform duration-1000" />
+                            <img
+                                src={item.projectimage}
+                                alt={item.projectname}
+                                className="w-full h-48 object-cover hover:scale-110 transition-transform duration-700"
+                            />
                             <div className='absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center'>
-                                <ExternalLink size={32} className='text-white' />
+                                <ExternalLink size={32} className='text-white drop-shadow-lg' />
                             </div>
                         </div>
-                        
+
                         <div className='flex flex-wrap gap-2 mb-3'>
                             {item.tags.map((tag, idx) => (
-                                <span key={idx} className='text-xs px-3 py-1 bg-green-100 text-green-700 rounded-full font-semibold'>
+                                <span key={idx} className='text-xs px-3 py-1 bg-green-100 dark:bg-green-900/40 text-green-700 dark:text-green-400 rounded-full font-semibold'>
                                     {tag}
                                 </span>
                             ))}
                         </div>
 
-                        <h3 className="text-2xl font-bold mb-3 text-gray-800">{item.projectname}</h3>
-                        <p className="text-base text-gray-700 leading-relaxed pb-6 min-h-12">
-                        {item.projectdescription}
+                        <h3 className="text-2xl font-bold mb-3 text-gray-800 dark:text-gray-100">{item.projectname}</h3>
+                        <p className="text-base text-gray-700 dark:text-gray-400 leading-relaxed pb-6 min-h-12">
+                            {item.projectdescription}
                         </p>
-                        
-                        <a  
+
+                        <a
                             href={item.link || '#'}
                             target={item.link ? '_blank' : '_self'}
-                            rel={item.link ? 'noopener noreferrer' : ''}>
-                        <button className='w-full p-3 font-semibold bg-linear-to-r from-green-600 to-green-700 text-white rounded-2xl hover:shadow-lg transition-all duration-300 hover:-translate-y-1 flex items-center justify-center gap-2 group/btn'>
-                            {item.link ? 'View Project' : 'Coming Soon'}
-                            <ChevronRight size={20} className='group-hover/btn:translate-x-1 transition-transform'/>
-                        </button>
+                            rel={item.link ? 'noopener noreferrer' : ''}
+                        >
+                            <button className='w-full p-3 font-semibold bg-linear-to-r from-green-600 to-green-700 dark:from-green-600 dark:to-green-700 text-white rounded-2xl hover:shadow-lg hover:shadow-green-600/30 hover:-translate-y-0.5 flex items-center justify-center gap-2 group/btn'>
+                                {item.link ? 'View Project' : 'Coming Soon'}
+                                <ChevronRight size={20} className='group-hover/btn:translate-x-1 transition-transform'/>
+                            </button>
                         </a>
                     </AnimatedOnScroll>
                 ))}
             </div>
-            
         </section>
         </>
     )

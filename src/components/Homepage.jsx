@@ -11,17 +11,17 @@ import Footer from './Footer'
 
 const Homepage = () => {
     return (
-        <>
-        <Navbar/>
-        <Intro/>
-        <About/>
-        <Skills/>
-        <Services/>
-        <Articles/>
-        <Testimonials/>
-        <Contact/>
-        <Footer/>
-        </>
+        <div className='min-h-screen bg-white dark:bg-gray-950 text-gray-900 dark:text-gray-100'>
+            <Navbar/>
+            <Intro/>
+            <About/>
+            <Skills/>
+            <Services/>
+            <Articles/>
+            <Testimonials/>
+            <Contact/>
+            <Footer/>
+        </div>
     )
 }
 

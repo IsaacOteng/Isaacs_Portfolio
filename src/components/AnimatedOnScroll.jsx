@@ -28,7 +28,7 @@ const VARIANTS = {
     className = '',
     variant = 'fade-up',
     delay = 0,
-    duration = 3000,
+    duration = 950,
     once = true,
     style = {},
     ...props
