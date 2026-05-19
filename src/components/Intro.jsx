@@ -18,21 +18,24 @@ const Intro = () => {
                             border border-green-100/50 dark:border-green-900/40"
             >
                 <AnimatedOnScroll className="flex-1 p-6 sm:p-10 md:p-16 lg:p-20 mb-10 md:mb-0 sm:mb-0" delay={0.05}>
-                    <p className="text-lg md:text-xl lg:text-2xl font-bold mb-2 text-gray-600 dark:text-gray-400">
-                        Heyy, I'm Isaac Oteng.
+                    <p className="font-mono text-sm md:text-base lg:text-lg tracking-tight mb-3 text-gray-600 dark:text-gray-400">
+                        <span className="text-green-700 dark:text-green-400">{'>'}</span>{' '}
+                        <span className="type-line text-gray-700 dark:text-gray-300">Heyy, I'm Isaac Oteng.</span>
                     </p>
-                    <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-green-700 dark:text-green-400 mb-2">
+                    <h1 className="heading-display text-5xl sm:text-6xl md:text-7xl lg:text-8xl mb-1
+                                   bg-linear-to-r from-green-600 via-emerald-400 to-green-700
+                                   dark:from-green-400 dark:via-emerald-300 dark:to-green-500
+                                   bg-clip-text text-transparent gradient-shift">
                         Fullstack
                     </h1>
-                    <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-gray-800 dark:text-gray-100">
-                        Software Engineer
+                    <h2 className="heading-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl mb-6 text-gray-800 dark:text-gray-100">
+                        Software <span className="font-serif-italic font-medium text-green-700 dark:text-green-400">Engineer</span>
                     </h2>
 
                     <p className="text-gray-700 dark:text-gray-400 text-base md:text-lg lg:text-xl max-w-3xl mb-8 leading-relaxed">
                         Innovative problem solver with a passion for creating secure &amp; scalable
                         solutions. Leveraging cutting-edge technologies to craft intuitive user
-                        experiences and robust backend systems. Let's build the future of tech
-                        together!
+                        experiences and robust backend systems. <span className="font-serif-italic text-gray-800 dark:text-gray-200">Let's build the future of tech together!</span>
                     </p>
 
                     <div className="flex flex-wrap gap-4 mb-0 sm:mb-10">
@@ -77,19 +80,19 @@ const Intro = () => {
                     className="absolute -bottom-10 md:-bottom-10 left-1/2 -translate-x-1/2
                                 w-full grid grid-cols-3 sm:grid-cols-3 gap-4
                                 bg-linear-to-b from-transparent to-green-300
-                                dark:to-gray-900
+                                dark:from-transparent dark:to-green-950
                                 rounded-3xl p-6 shadow-lg z-30"
                 >
                     <AnimatedOnScroll className="bg-linear-to-br from-gray-800 to-black dark:from-green-800 dark:to-green-900/80 text-white rounded-2xl text-center p-5 hover:scale-105 duration-1000 transition-all" delay={0.25}>
-                        <span className="text-2xl md:text-3xl lg:text-4xl font-extrabold">3+</span>
+                        <span className="num-display text-3xl md:text-4xl lg:text-5xl font-bold">3+</span>
                         <p className="text-gray-400 text-sm md:text-base mt-1">Years of Experience</p>
                     </AnimatedOnScroll>
                     <AnimatedOnScroll className="bg-linear-to-br from-gray-800 to-black dark:from-green-800 dark:to-green-900/80 text-white rounded-2xl text-center p-5 hover:scale-105 duration-1000 transition-all" delay={0.4}>
-                        <span className="text-2xl md:text-3xl lg:text-4xl font-extrabold">17+</span>
+                        <span className="num-display text-3xl md:text-4xl lg:text-5xl font-bold">17+</span>
                         <p className="text-gray-400 text-sm md:text-base mt-1">Completed Projects</p>
                     </AnimatedOnScroll>
                     <AnimatedOnScroll className="bg-linear-to-br from-gray-800 to-black dark:from-green-800 dark:to-green-900/80 text-white rounded-2xl text-center p-5 hover:scale-105 duration-1000 transition-all" delay={0.55}>
-                        <span className="text-2xl md:text-3xl lg:text-4xl font-extrabold">100%</span>
+                        <span className="num-display text-3xl md:text-4xl lg:text-5xl font-bold">100%</span>
                         <p className="text-gray-400 text-sm md:text-base mt-1">Client Satisfaction</p>
                     </AnimatedOnScroll>
                 </div>

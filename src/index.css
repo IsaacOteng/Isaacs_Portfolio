@@ -1,13 +1,36 @@
 @import "tailwindcss";
 @variant dark (&:is(.dark, .dark *));
 
+@theme {
+    --font-sans: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+    --font-display: "Sora", "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+    --font-bricolage: "Bricolage Grotesque", "Sora", ui-sans-serif, system-ui, sans-serif;
+    --font-wireframe: "Monoton", "Sora", ui-sans-serif, system-ui, sans-serif;
+    --font-serif: "Fraunces", ui-serif, Georgia, serif;
+    --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+@property --border-angle {
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+}
+
 @layer base {
     html {
         scroll-behavior: smooth;
     }
 
     body {
-        @apply bg-white text-gray-900 font-sans;
+        @apply bg-white text-gray-900;
+        font-family: var(--font-sans);
+        font-feature-settings: "ss01", "ss02", "cv11";
+        letter-spacing: -0.01em;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        font-family: var(--font-display);
+        letter-spacing: -0.02em;
     }
 }
 
@@ -48,6 +71,38 @@
         100% { background-position: 200% center; }
     }
 
+    @keyframes rotate-border-angle {
+        to { --border-angle: 360deg; }
+    }
+
+    @keyframes word-reveal {
+        from {
+            opacity: 0;
+            transform: translateY(0.6em) rotate(2deg);
+            filter: blur(8px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0) rotate(0);
+            filter: blur(0);
+        }
+    }
+
+    @keyframes caret-blink {
+        0%, 100% { border-right-color: currentColor; }
+        50%       { border-right-color: transparent; }
+    }
+
+    @keyframes typing {
+        from { width: 0; }
+        to   { width: 100%; }
+    }
+
+    @keyframes gradient-shift {
+        0%, 100% { background-position: 0% 50%; }
+        50%       { background-position: 100% 50%; }
+    }
+
     .animate-fadeInUp     { animation: fadeInUp 0.6s ease-out; }
     .animate-slideInLeft  { animation: slideInFromLeft 0.6s ease-out; }
     .animate-slideInRight { animation: slideInFromRight 0.6s ease-out; }
@@ -73,6 +128,93 @@
 @layer utilities {
     .gradient-text {
         @apply bg-linear-to-r from-green-600 to-green-700 bg-clip-text text-transparent;
+    }
+
+    .font-display    { font-family: var(--font-display); }
+    .font-bricolage  { font-family: var(--font-bricolage); }
+    .font-wireframe  { font-family: var(--font-wireframe); letter-spacing: 0.04em; }
+    .font-serif      { font-family: var(--font-serif); }
+    .font-mono       { font-family: var(--font-mono); }
+
+    .font-serif-italic {
+        font-family: var(--font-serif);
+        font-style: italic;
+        font-variation-settings: "opsz" 144;
+    }
+
+    .heading-display {
+        font-family: var(--font-display);
+        letter-spacing: -0.035em;
+        font-weight: 700;
+    }
+
+    .heading-bricolage {
+        font-family: var(--font-bricolage);
+        font-variation-settings: "opsz" 96, "wdth" 100;
+        letter-spacing: -0.04em;
+        font-weight: 700;
+    }
+
+    .num-display {
+        font-family: var(--font-mono);
+        font-feature-settings: "tnum", "zero";
+        letter-spacing: -0.04em;
+    }
+
+    /* Conic-gradient tracing border (image 3 effect, in our greens) */
+    .trace-border {
+        position: relative;
+        isolation: isolate;
+    }
+    .trace-border::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        padding: 2px;
+        border-radius: inherit;
+        background: conic-gradient(
+            from var(--border-angle, 0deg),
+            transparent 0%,
+            transparent 65%,
+            #22c55e 78%,
+            #4ade80 86%,
+            #a7f3d0 92%,
+            transparent 100%
+        );
+        -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+        -webkit-mask-composite: xor;
+                mask-composite: exclude;
+        animation: rotate-border-angle 5s linear infinite;
+        pointer-events: none;
+        z-index: 1;
+    }
+
+    .trace-border-slow::before { animation-duration: 8s; }
+
+    /* Word-by-word reveal (apply to a parent; spans get staggered) */
+    .reveal-words > span {
+        display: inline-block;
+        opacity: 0;
+        animation: word-reveal 0.7s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    }
+
+    /* CSS-only typewriter — collapse element to single line and step its width */
+    .type-line {
+        display: inline-block;
+        overflow: hidden;
+        white-space: nowrap;
+        vertical-align: bottom;
+        border-right: 2px solid;
+        width: 0;
+        animation:
+            typing 2.2s steps(28, end) 0.2s forwards,
+            caret-blink 0.85s step-end infinite;
+    }
+
+    /* Animated gradient text (use on heading text-transparent/bg-clip-text spans) */
+    .gradient-shift {
+        background-size: 200% 200%;
+        animation: gradient-shift 6s ease-in-out infinite;
     }
 
     .container-custom { @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8; }

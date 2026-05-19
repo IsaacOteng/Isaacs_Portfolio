@@ -42,8 +42,8 @@ const Navbar = () => {
                             glass-light'>
 
                 {/* Logo */}
-                <div className='font-bold text-lg md:text-xl text-green-700 dark:text-green-400'>
-                    Isaac Jnr
+                <div className='heading-display text-lg md:text-xl text-green-700 dark:text-green-400'>
+                    Isaac<span className='font-serif-italic font-medium'> Oteng</span>
                 </div>
 
                 {/* Desktop Nav Links */}

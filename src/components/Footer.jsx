@@ -26,7 +26,7 @@ const Footer = () => {
                 <div className='grid grid-cols-1 md:grid-cols-4 gap-12 mb-12'>
 
                     <div>
-                        <h3 className='text-2xl font-bold text-green-700 dark:text-green-400 mb-3'>Isaac Oteng</h3>
+                        <h3 className='heading-display text-2xl text-green-700 dark:text-green-400 mb-3'>Isaac <span className='font-serif-italic font-medium'>Oteng</span></h3>
                         <p className='text-gray-600 dark:text-gray-400 text-sm mb-4'>Fullstack Software Engineer crafting elegant solutions</p>
                         <a
                             href="/isaac-oteng-resume.pdf"

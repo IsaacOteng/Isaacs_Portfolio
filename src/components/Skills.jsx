@@ -32,11 +32,11 @@ const Skills = () => {
   return (
     <section id="skills" className="mx-4 sm:mx-8 md:mx-12 lg:mx-10 mb-30">
       <div className="text-center mb-12">
-        <p className="text-3xl md:text-4xl text-green-700 dark:text-green-400 font-bold">
-          Skills &amp; Expertise
+        <p className="heading-bricolage text-4xl md:text-5xl lg:text-6xl text-green-700 dark:text-green-400">
+          Skills &amp; <span className="font-serif-italic font-medium bg-linear-to-r from-green-400 via-emerald-300 to-green-500 bg-clip-text text-transparent gradient-shift">Expertise</span>
         </p>
-        <p className="text-gray-600 dark:text-gray-400 text-sm md:text-base mt-2">
-          Proficient in modern technologies and tools
+        <p className="font-mono text-gray-600 dark:text-gray-400 text-xs md:text-sm mt-3 tracking-tight uppercase">
+          <span className="text-green-700 dark:text-green-400">/</span> Proficient in modern technologies &amp; tools
         </p>
       </div>
 
@@ -51,7 +51,7 @@ const Skills = () => {
                        glow-green-hover"
             delay={0.05}
         >
-          <h1 className="text-center text-green-700 dark:text-green-400 text-xl md:text-2xl font-bold mb-8">
+          <h1 className="heading-bricolage text-center text-green-700 dark:text-green-400 text-2xl md:text-3xl mb-8">
             Frontend Development
           </h1>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 px-6">
@@ -76,7 +76,7 @@ const Skills = () => {
                        glow-green-hover"
             delay={0.12}
         >
-          <h1 className="text-center text-green-700 dark:text-green-400 text-xl md:text-2xl font-bold mb-8">
+          <h1 className="heading-bricolage text-center text-green-700 dark:text-green-400 text-2xl md:text-3xl mb-8">
             Backend Development
           </h1>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 px-6">
@@ -101,7 +101,7 @@ const Skills = () => {
                        glow-green-hover"
             delay={0.19}
         >
-          <h1 className="text-center text-green-700 dark:text-green-400 text-xl md:text-2xl font-bold mb-8">
+          <h1 className="heading-bricolage text-center text-green-700 dark:text-green-400 text-2xl md:text-3xl mb-8">
             Tools &amp; Platforms
           </h1>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 px-6">

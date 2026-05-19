@@ -39,8 +39,10 @@ const Articles = () => {
     return (
         <section id="articles" className='mx-4 sm:mx-8 md:mx-12 lg:mx-10 mb-40'>
             <div className='text-center mb-12'>
-                <p className='text-3xl md:text-4xl text-green-700 dark:text-green-400 font-bold'>Latest Articles</p>
-                <p className='text-gray-600 dark:text-gray-400 text-sm md:text-base mt-2'>Technical insights and development tips</p>
+                <p className='heading-display text-3xl md:text-4xl text-green-700 dark:text-green-400'>
+                    Latest <span className='font-serif-italic font-medium'>Articles</span>
+                </p>
+                <p className='font-mono text-gray-600 dark:text-gray-400 text-xs md:text-sm mt-2 tracking-tight'>Technical insights and development tips</p>
             </div>
 
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8'>
@@ -63,7 +65,7 @@ const Articles = () => {
                         </div>
 
                         <div className='p-6'>
-                            <h3 className='text-xl font-bold text-gray-800 dark:text-gray-100 mb-3 line-clamp-2 group-hover:text-green-700 dark:group-hover:text-green-400 transition-colors'>
+                            <h3 className='heading-display text-xl text-gray-800 dark:text-gray-100 mb-3 line-clamp-2 group-hover:text-green-700 dark:group-hover:text-green-400 transition-colors'>
                                 {article.title}
                             </h3>
                             <p className='text-gray-600 dark:text-gray-400 text-sm mb-4 line-clamp-3'>

@@ -60,8 +60,10 @@ const Services = () => {
         <>
         <section id="projects" className='mx-4 sm:mx-8 md:mx-12 lg:mx-10 mb-40'>
             <div className='text-center mb-12'>
-                <p className='text-3xl md:text-4xl text-green-700 dark:text-green-400 font-bold'>Featured Projects</p>
-                <p className='text-gray-600 dark:text-gray-400 text-sm md:text-base mt-2'>Showcasing my recent work and expertise</p>
+                <p className='heading-display text-3xl md:text-4xl text-green-700 dark:text-green-400'>
+                    Featured <span className='font-serif-italic font-medium'>Projects</span>
+                </p>
+                <p className='font-mono text-gray-600 dark:text-gray-400 text-xs md:text-sm mt-2 tracking-tight'>Showcasing my recent work and expertise</p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 w-full mx-auto">
                 {projectcards.map((item, index) => (
@@ -94,7 +96,7 @@ const Services = () => {
                             ))}
                         </div>
 
-                        <h3 className="text-2xl font-bold mb-3 text-gray-800 dark:text-gray-100">{item.projectname}</h3>
+                        <h3 className="heading-display text-2xl mb-3 text-gray-800 dark:text-gray-100">{item.projectname}</h3>
                         <p className="text-base text-gray-700 dark:text-gray-400 leading-relaxed pb-6 min-h-12">
                             {item.projectdescription}
                         </p>

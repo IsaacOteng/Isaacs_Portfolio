@@ -46,8 +46,10 @@ const Contact = () => {
             <Toaster position="bottom-center" reverseOrder={true} />
 
             <div className='text-center mb-12'>
-                <p className='text-3xl md:text-4xl text-green-700 dark:text-green-400 font-bold'>Let's Work Together</p>
-                <p className='text-gray-600 dark:text-gray-400 text-sm md:text-base mt-2'>Have a project in mind? Get in touch!</p>
+                <p className='heading-display text-3xl md:text-4xl text-green-700 dark:text-green-400'>
+                    Let's <span className='font-serif-italic font-medium'>Work Together</span>
+                </p>
+                <p className='font-mono text-gray-600 dark:text-gray-400 text-xs md:text-sm mt-2 tracking-tight'>Have a project in mind? Get in touch!</p>
             </div>
 
             <div className='grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16'>
@@ -84,7 +86,7 @@ const Contact = () => {
             >
                 <div className='flex items-center gap-3 mb-8'>
                     <MessageSquare className='text-green-700 dark:text-green-400' size={28} />
-                    <h3 className='text-2xl font-bold text-gray-800 dark:text-gray-100'>Send Me a Message</h3>
+                    <h3 className='heading-display text-2xl text-gray-800 dark:text-gray-100'>Send Me a <span className='font-serif-italic font-medium text-green-700 dark:text-green-400'>Message</span></h3>
                 </div>
 
                 {submitted && (
@@ -157,7 +159,7 @@ const Contact = () => {
                 className='mt-16 bg-linear-to-r from-green-600 to-green-700 rounded-2xl p-12 text-white text-center shadow-xl shadow-green-700/20'
                 delay={0.12}
             >
-                <h3 className='text-2xl md:text-3xl font-bold mb-4'>Ready to Start Your Project?</h3>
+                <h3 className='heading-display text-2xl md:text-3xl mb-4'>Ready to Start Your <span className='font-serif-italic font-medium'>Project?</span></h3>
                 <p className='text-green-100 mb-8 max-w-2xl mx-auto'>
                     Whether you have a small project or a large enterprise solution, I'm ready to help bring your ideas to life.
                 </p>

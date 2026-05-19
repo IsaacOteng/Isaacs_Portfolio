@@ -45,8 +45,10 @@ const ReadArticles = () => {
 
             <section id="articles" className='mx-4 sm:mx-8 md:mx-12 lg:mx-10 mb-40'>
             <div className='text-center mb-12'>
-                <p className='text-3xl md:text-4xl text-green-700 font-bold'>Latest Articles</p>
-                <p className='text-gray-600 text-sm md:text-base mt-2'>Technical insights and development tips</p>
+                <p className='heading-display text-3xl md:text-4xl text-green-700 dark:text-green-400'>
+                    Latest <span className='font-serif-italic font-medium'>Articles</span>
+                </p>
+                <p className='font-mono text-gray-600 dark:text-gray-400 text-xs md:text-sm mt-2 tracking-tight'>Technical insights and development tips</p>
             </div>
 
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8'>

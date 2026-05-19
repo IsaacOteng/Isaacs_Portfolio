@@ -45,8 +45,10 @@ const Testimonials = () => {
     return (
         <section className='mx-4 sm:mx-8 md:mx-12 lg:mx-10 mb-40'>
             <div className='text-center mb-12'>
-                <p className='text-3xl md:text-4xl text-green-700 dark:text-green-400 font-bold'>Client Testimonials</p>
-                <p className='text-gray-600 dark:text-gray-400 text-sm md:text-base mt-2'>What clients say about working with me</p>
+                <p className='heading-display text-3xl md:text-4xl text-green-700 dark:text-green-400'>
+                    Client <span className='font-serif-italic font-medium'>Testimonials</span>
+                </p>
+                <p className='font-mono text-gray-600 dark:text-gray-400 text-xs md:text-sm mt-2 tracking-tight'>What clients say about working with me</p>
             </div>
 
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8'>
@@ -69,7 +71,7 @@ const Testimonials = () => {
                             ))}
                         </div>
 
-                        <p className='text-gray-700 dark:text-gray-300 text-base leading-relaxed mb-6'>
+                        <p className='font-serif-italic text-gray-700 dark:text-gray-300 text-lg leading-relaxed mb-6'>
                             "{testimonial.content}"
                         </p>
 
@@ -96,7 +98,7 @@ const Testimonials = () => {
                     { value: '100%', label: 'Satisfaction' },
                 ].map((stat, i) => (
                     <div key={i} className='text-center hover:scale-105 cursor-default'>
-                        <p className='text-3xl md:text-4xl font-bold text-green-700 dark:text-green-400'>{stat.value}</p>
+                        <p className='num-display text-3xl md:text-4xl font-bold text-green-700 dark:text-green-400'>{stat.value}</p>
                         <p className='text-gray-600 dark:text-gray-400 text-sm mt-2'>{stat.label}</p>
                     </div>
                 ))}
