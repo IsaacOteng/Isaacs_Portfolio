@@ -33,7 +33,8 @@ const Intro = () => {
                         </span>
                     </h1>
                     <h2 className="heading-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl mb-6 text-gray-800 dark:text-gray-100">
-                        <span>Software Engineer.</span>
+                        <span>Software <span className="font-serif-italic font-medium text-3xl sm:text-4xl md:text-5xl lg:text-6xl  bg-linear-to-r from-green-400 via-emerald-300 to-green-500 bg-clip-text text-transparent gradient-shift">Engineer</span>
+                        </span>
                     </h2>
 
                     <p className="text-gray-700 dark:text-gray-400 text-base md:text-lg lg:text-xl max-w-3xl mb-8 leading-relaxed">
