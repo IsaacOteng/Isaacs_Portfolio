@@ -21,12 +21,7 @@ import AnimatedOnScroll from './AnimatedOnScroll';
         return (
             <section id="about" className="mx-4 sm:mx-8 md:mx-12 lg:mx-10 mb-30">
             <div className="text-center mb-12 flex flex-col items-center">
-                <p className="font-wireframe text-5xl sm:text-6xl md:text-7xl lg:text-8xl
-                              text-green-700/15 dark:text-green-400/20
-                              leading-none mb-1 select-none pointer-events-none">
-                    REMARKABLE
-                </p>
-                <p className="heading-bricolage text-3xl md:text-5xl text-green-700 dark:text-green-400 mb-4 -mt-2">
+                <p className="heading-bricolage text-3xl md:text-5xl text-green-700 dark:text-green-400 mb-4">
                     About <span className="font-serif-italic font-medium bg-linear-to-r from-green-400 via-emerald-300 to-green-500 bg-clip-text text-transparent gradient-shift">Me</span>
                 </p>
                 <p className="text-base sm:text-lg md:text-xl lg:text-2xl

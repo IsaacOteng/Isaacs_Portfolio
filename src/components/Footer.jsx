@@ -21,7 +21,7 @@ const Footer = () => {
 
     return (
         <footer className='bg-linear-to-b from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-950 border-t-2 border-gray-200 dark:border-gray-800 pt-16 pb-8'>
-            <div className='max-w-6xl mx-0 sm:mx-5 px-4'>
+            <div className='max-w-6xl mx-0 sm:mx-5 lg:mx-auto px-4 lg:px-8'>
 
                 <div className='grid grid-cols-1 md:grid-cols-4 gap-12 mb-12'>
 
@@ -79,9 +79,9 @@ const Footer = () => {
                     </div>
                 </div>
 
-                <div className='border-t border-gray-300 dark:border-gray-700 pt-8 mb-8'>
-                    <p className='text-gray-600 dark:text-gray-400 text-sm font-semibold mb-4'>Follow Me</p>
-                    <div className='flex gap-4'>
+                <div className='border-t border-gray-300 dark:border-gray-700 pt-8 mb-8 lg:text-center'>
+                    <p className='text-gray-600 dark:text-gray-400 text-sm font-semibold mb-4 lg:tracking-widest lg:uppercase'>Follow Me</p>
+                    <div className='flex gap-4 lg:justify-center'>
                         {socialLinks.map((social, index) => (
                             <a
                                 key={index}

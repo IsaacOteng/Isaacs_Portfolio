@@ -20,16 +20,20 @@ const Intro = () => {
                 <AnimatedOnScroll className="flex-1 p-6 sm:p-10 md:p-16 lg:p-20 mb-10 md:mb-0 sm:mb-0" delay={0.05}>
                     <p className="font-mono text-sm md:text-base lg:text-lg tracking-tight mb-3 text-gray-600 dark:text-gray-400">
                         <span className="text-green-700 dark:text-green-400">{'>'}</span>{' '}
-                        <span className="type-line text-gray-700 dark:text-gray-300">Heyy, I'm Isaac Oteng.</span>
+                        <span className="text-gray-700 dark:text-gray-300">Heyy, I'm Isaac Oteng.</span>
                     </p>
-                    <h1 className="heading-display text-5xl sm:text-6xl md:text-7xl lg:text-8xl mb-1
-                                   bg-linear-to-r from-green-600 via-emerald-400 to-green-700
-                                   dark:from-green-400 dark:via-emerald-300 dark:to-green-500
-                                   bg-clip-text text-transparent gradient-shift">
-                        Fullstack
+                    <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl mb-2 leading-none">
+                        <span className="type-loop align-bottom">
+                            <span className="font-wireframe
+                                                bg-linear-to-r from-green-600 via-emerald-400 to-green-700
+                                                dark:from-green-400 dark:via-emerald-300 dark:to-green-500
+                                                bg-clip-text text-transparent gradient-shift">
+                                FULLSTACK 
+                            </span>
+                        </span>
                     </h1>
                     <h2 className="heading-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl mb-6 text-gray-800 dark:text-gray-100">
-                        Software <span className="font-serif-italic font-medium text-green-700 dark:text-green-400">Engineer</span>
+                        <span>Software Engineer.</span>
                     </h2>
 
                     <p className="text-gray-700 dark:text-gray-400 text-base md:text-lg lg:text-xl max-w-3xl mb-8 leading-relaxed">

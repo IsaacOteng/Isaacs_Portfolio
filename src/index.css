@@ -207,8 +207,47 @@
         border-right: 2px solid;
         width: 0;
         animation:
-            typing 2.2s steps(28, end) 0.2s forwards,
+            typing 1.6s steps(24, end) 0.2s forwards,
             caret-blink 0.85s step-end infinite;
+    }
+
+    /* Typewriter for hero title — green caret, larger, runs after greeting */
+    .type-title {
+        display: inline-block;
+        overflow: hidden;
+        white-space: nowrap;
+        vertical-align: bottom;
+        border-right: 0.08em solid #16a34a;
+        width: 0;
+        animation:
+            typing 1.6s steps(18, end) 2s forwards,
+            caret-blink 0.85s step-end infinite;
+    }
+    :is(.dark .type-title) {
+        border-right-color: #22c55e;
+    }
+
+    /* Looping typewriter — type → hold → erase → repeat every 5s */
+    .type-loop {
+        display: inline-block;
+        overflow: hidden;
+        white-space: nowrap;
+        vertical-align: bottom;
+        border-right: 0.08em solid #16a34a;
+        width: 0;
+        animation:
+            type-loop 10s steps(36, end) infinite,
+            caret-blink 2s step-end infinite;
+    }
+    :is(.dark .type-loop) {
+        border-right-color: #22c55e;
+    }
+
+    @keyframes type-loop {
+        0%   { width: 0; }
+        25%  { width: 100%; }
+        75%  { width: 100%; }
+        100% { width: 0; }
     }
 
     /* Animated gradient text (use on heading text-transparent/bg-clip-text spans) */
