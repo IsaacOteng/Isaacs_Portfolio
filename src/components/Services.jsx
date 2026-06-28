@@ -111,14 +111,15 @@ const Services = () => {
                         <AnimatedOnScroll
                             key={index}
                             className='group relative overflow-hidden rounded-[2rem]
-                                       bg-linear-to-br from-gray-950 via-black to-gray-900
-                                       border border-white/10 shadow-2xl
+                                       bg-linear-to-br from-white via-green-50 to-green-100
+                                       dark:from-gray-950 dark:via-black dark:to-gray-900
+                                       border border-gray-200 dark:border-white/10 shadow-2xl
                                        p-6 sm:p-10 lg:p-16'
                             delay={index * 0.05}
                         >
                             <div className='grid lg:grid-cols-2 gap-10 lg:gap-16 items-center'>
                                 {/* Image stack — three duplicates fanned in 3D; hover any card to bring it forward */}
-                                <div className={`relative h-72 sm:h-80 lg:h-112 px-6 py-8 perspective-[1800px] ${reversed ? 'lg:order-2' : ''}`}>
+                                <div className={`relative h-72 sm:h-80 lg:h-112 px-6 py-8 perspective-[1800px] ${reversed ? 'lg:order-2 lg:-translate-x-12' : 'lg:-translate-x-10'}`}>
                                     {/* back card (duplicate) */}
                                     <img
                                         src={item.projectimage}
@@ -156,32 +157,32 @@ const Services = () => {
                                 </div>
 
                                 {/* Content */}
-                                <div className={reversed ? 'lg:order-1' : ''}>
-                                    <p className='font-mono text-xs md:text-sm tracking-wide text-gray-400 mb-5'>
+                                <div className={`${reversed ? 'lg:order-1 lg:pr-2' : 'lg:pl-8'}`}>
+                                    <p className='font-mono text-xs md:text-sm tracking-wide text-gray-500 dark:text-gray-400 mb-5'>
                                         {item.meta}
                                     </p>
 
-                                    <h3 className='heading-display text-white text-4xl sm:text-5xl lg:text-6xl leading-[0.95] mb-6'>
+                                    <h3 className='heading-display text-gray-900 dark:text-white text-4xl sm:text-5xl lg:text-6xl leading-[0.95] mb-6'>
                                         {item.projectname}
                                     </h3>
 
-                                    <p className='text-gray-300 text-base md:text-lg leading-relaxed mb-7 max-w-xl'>
+                                    <p className='text-gray-700 dark:text-gray-300 text-base md:text-lg leading-relaxed mb-7 max-w-xl'>
                                         {item.projectdescription}
                                     </p>
 
                                     <ul className='space-y-3 mb-9'>
                                         {item.features.map((feature, idx) => (
-                                            <li key={idx} className='flex items-start gap-3 text-gray-200 text-sm md:text-base'>
-                                                <span className='mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-emerald-400' />
+                                            <li key={idx} className='flex items-start gap-3 text-gray-700 dark:text-gray-200 text-sm md:text-base'>
+                                                <span className='mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-emerald-500 dark:bg-emerald-400' />
                                                 <span>{feature}</span>
                                             </li>
                                         ))}
                                     </ul>
 
-                                    <div className='flex flex-wrap items-center justify-between gap-6 pt-6 border-t border-white/10'>
+                                    <div className='flex flex-wrap items-center justify-between gap-6 pt-6 border-t border-gray-200 dark:border-white/10'>
                                         <div className='flex flex-wrap gap-x-5 gap-y-2'>
                                             {item.tags.map((tag, idx) => (
-                                                <span key={idx} className='font-mono text-[0.7rem] md:text-xs uppercase tracking-[0.15em] text-gray-400'>
+                                                <span key={idx} className='font-mono text-[0.7rem] md:text-xs uppercase tracking-[0.15em] text-gray-500 dark:text-gray-400'>
                                                     {tag}
                                                 </span>
                                             ))}
