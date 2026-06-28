@@ -107,6 +107,8 @@ const Services = () => {
             <div className='flex flex-col gap-10 lg:gap-14'>
                 {projectcards.map((item, index) => {
                     const reversed = index % 2 === 1
+                    const imgVariant = reversed ? 'fade-right' : 'fade-left'
+                    const textVariant = reversed ? 'fade-left' : 'fade-right'
                     return (
                         <AnimatedOnScroll
                             key={index}
@@ -117,90 +119,110 @@ const Services = () => {
                                        p-6 sm:p-10 lg:p-16'
                             delay={index * 0.05}
                         >
-                            <div className='grid lg:grid-cols-2 gap-10 lg:gap-16 items-center'>
+                            <div className='grid lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-16 items-center'>
                                 {/* Image stack — three duplicates fanned in 3D; hover any card to bring it forward */}
-                                <div className={`relative h-72 sm:h-80 lg:h-112 px-6 py-8 perspective-[1800px] ${reversed ? 'lg:order-2 lg:-translate-x-12' : 'lg:-translate-x-10'}`}>
-                                    {/* back card (duplicate) */}
-                                    <img
-                                        src={item.projectimage}
-                                        alt=''
-                                        aria-hidden='true'
-                                        className='absolute inset-0 m-auto w-[80%] h-[78%] object-cover rounded-2xl
-                                                   shadow-xl shadow-black/50 opacity-55 z-10 cursor-pointer
-                                                   transform-[translate(38%,30%)_rotateY(-15deg)_rotateX(6deg)_scale(.9)]
-                                                   hover:z-40 hover:opacity-100
-                                                   hover:transform-[translate(38%,30%)_rotateY(0deg)_rotateX(0deg)_scale(1)]
-                                                   transition-all duration-500 ease-out'
-                                    />
-                                    {/* middle card (duplicate) */}
-                                    <img
-                                        src={item.projectimage}
-                                        alt=''
-                                        aria-hidden='true'
-                                        className='absolute inset-0 m-auto w-[80%] h-[78%] object-cover rounded-2xl
-                                                   shadow-xl shadow-black/50 opacity-80 z-20 cursor-pointer
-                                                   transform-[translate(19%,15%)_rotateY(-13deg)_rotateX(5deg)_scale(.95)]
-                                                   hover:z-40 hover:opacity-100
-                                                   hover:transform-[translate(19%,15%)_rotateY(0deg)_rotateX(0deg)_scale(1)]
-                                                   transition-all duration-500 ease-out'
-                                    />
-                                    {/* front card */}
-                                    <img
-                                        src={item.projectimage}
-                                        alt={item.projectname}
-                                        className='absolute inset-0 m-auto w-[80%] h-[78%] object-cover rounded-2xl
-                                                   ring-2 ring-emerald-400/70 shadow-2xl shadow-emerald-500/20 z-30 cursor-pointer
-                                                   transform-[rotateY(-11deg)_rotateX(3deg)]
-                                                   hover:z-40 hover:transform-[rotateY(0deg)_rotateX(0deg)_scale(1.02)]
-                                                   transition-all duration-500 ease-out'
-                                    />
+                                <div className={reversed ? 'lg:order-2 lg:-translate-x-12' : 'lg:-translate-x-10'}>
+                                    <AnimatedOnScroll
+                                        variant={imgVariant}
+                                        delay={0.1}
+                                        className='relative h-64 sm:h-80 lg:h-112 py-4 px-2 sm:px-6 perspective-[1800px]'
+                                    >
+                                        {/* back card (duplicate) */}
+                                        <img
+                                            src={item.projectimage}
+                                            alt=''
+                                            aria-hidden='true'
+                                            className='absolute inset-0 m-auto w-[82%] h-[80%] object-cover rounded-2xl
+                                                       shadow-xl shadow-black/50 opacity-55 z-10 cursor-pointer
+                                                       transform-[translate(30%,26%)_rotateY(-14deg)_rotateX(6deg)_scale(.9)]
+                                                       hover:z-40 hover:opacity-100
+                                                       hover:transform-[translate(30%,26%)_rotateY(0deg)_rotateX(0deg)_scale(1)]
+                                                       transition-all duration-500 ease-out'
+                                        />
+                                        {/* middle card (duplicate) */}
+                                        <img
+                                            src={item.projectimage}
+                                            alt=''
+                                            aria-hidden='true'
+                                            className='absolute inset-0 m-auto w-[82%] h-[80%] object-cover rounded-2xl
+                                                       shadow-xl shadow-black/50 opacity-80 z-20 cursor-pointer
+                                                       transform-[translate(15%,13%)_rotateY(-12deg)_rotateX(5deg)_scale(.95)]
+                                                       hover:z-40 hover:opacity-100
+                                                       hover:transform-[translate(15%,13%)_rotateY(0deg)_rotateX(0deg)_scale(1)]
+                                                       transition-all duration-500 ease-out'
+                                        />
+                                        {/* front card */}
+                                        <img
+                                            src={item.projectimage}
+                                            alt={item.projectname}
+                                            className='absolute inset-0 m-auto w-[82%] h-[80%] object-cover rounded-2xl
+                                                       ring-2 ring-emerald-400/70 shadow-2xl shadow-emerald-500/20 z-30 cursor-pointer
+                                                       transform-[rotateY(-10deg)_rotateX(3deg)]
+                                                       hover:z-40 hover:transform-[rotateY(0deg)_rotateX(0deg)_scale(1.02)]
+                                                       transition-all duration-500 ease-out'
+                                        />
+                                    </AnimatedOnScroll>
                                 </div>
 
                                 {/* Content */}
                                 <div className={`${reversed ? 'lg:order-1 lg:pr-2' : 'lg:pl-8'}`}>
-                                    <p className='font-mono text-xs md:text-sm tracking-wide text-gray-500 dark:text-gray-400 mb-5'>
-                                        {item.meta}
-                                    </p>
+                                    <AnimatedOnScroll variant={textVariant} delay={0.15}>
+                                        <p className='font-mono text-xs md:text-sm tracking-wide text-gray-500 dark:text-gray-400 mb-5'>
+                                            {item.meta}
+                                        </p>
+                                    </AnimatedOnScroll>
 
-                                    <h3 className='heading-display text-gray-900 dark:text-white text-4xl sm:text-5xl lg:text-6xl leading-[0.95] mb-6'>
-                                        {item.projectname}
-                                    </h3>
+                                    <AnimatedOnScroll variant={textVariant} delay={0.25}>
+                                        <h3 className='heading-display text-gray-900 dark:text-white text-4xl sm:text-5xl lg:text-6xl leading-[0.95] mb-6'>
+                                            {item.projectname}
+                                        </h3>
+                                    </AnimatedOnScroll>
 
-                                    <p className='text-gray-700 dark:text-gray-300 text-base md:text-lg leading-relaxed mb-7 max-w-xl'>
-                                        {item.projectdescription}
-                                    </p>
+                                    <AnimatedOnScroll variant={textVariant} delay={0.32}>
+                                        <p className='text-gray-700 dark:text-gray-300 text-base md:text-lg leading-relaxed mb-7 max-w-xl'>
+                                            {item.projectdescription}
+                                        </p>
+                                    </AnimatedOnScroll>
 
                                     <ul className='space-y-3 mb-9'>
                                         {item.features.map((feature, idx) => (
-                                            <li key={idx} className='flex items-start gap-3 text-gray-700 dark:text-gray-200 text-sm md:text-base'>
+                                            <AnimatedOnScroll
+                                                as='li'
+                                                key={idx}
+                                                variant={textVariant}
+                                                delay={0.4 + idx * 0.08}
+                                                className='flex items-start gap-3 text-gray-700 dark:text-gray-200 text-sm md:text-base'
+                                            >
                                                 <span className='mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-emerald-500 dark:bg-emerald-400' />
                                                 <span>{feature}</span>
-                                            </li>
+                                            </AnimatedOnScroll>
                                         ))}
                                     </ul>
 
-                                    <div className='flex flex-wrap items-center justify-between gap-6 pt-6 border-t border-gray-200 dark:border-white/10'>
-                                        <div className='flex flex-wrap gap-x-5 gap-y-2'>
-                                            {item.tags.map((tag, idx) => (
-                                                <span key={idx} className='font-mono text-[0.7rem] md:text-xs uppercase tracking-[0.15em] text-gray-500 dark:text-gray-400'>
-                                                    {tag}
-                                                </span>
-                                            ))}
-                                        </div>
+                                    <AnimatedOnScroll variant='fade-up' delay={0.5}>
+                                        <div className='flex flex-wrap items-center justify-between gap-6 pt-6 border-t border-gray-200 dark:border-white/10'>
+                                            <div className='flex flex-wrap gap-x-5 gap-y-2'>
+                                                {item.tags.map((tag, idx) => (
+                                                    <span key={idx} className='font-mono text-[0.7rem] md:text-xs uppercase tracking-[0.15em] text-gray-500 dark:text-gray-400'>
+                                                        {tag}
+                                                    </span>
+                                                ))}
+                                            </div>
 
-                                        <a
-                                            href={item.link || '#'}
-                                            target={item.link ? '_blank' : '_self'}
-                                            rel={item.link ? 'noopener noreferrer' : ''}
-                                            className='inline-flex items-center gap-2 px-5 py-2.5 rounded-full
-                                                       bg-linear-to-r from-green-600 to-emerald-500 text-white font-semibold text-sm
-                                                       hover:shadow-lg hover:shadow-emerald-500/30 hover:-translate-y-0.5
-                                                       transition-all group/btn'
-                                        >
-                                            {item.link ? 'View Project' : 'Coming Soon'}
-                                            <ArrowUpRight size={18} className='group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5 transition-transform' />
-                                        </a>
-                                    </div>
+                                            <a
+                                                href={item.link || '#'}
+                                                target={item.link ? '_blank' : '_self'}
+                                                rel={item.link ? 'noopener noreferrer' : ''}
+                                                className='inline-flex items-center gap-2 px-5 py-2.5 rounded-full
+                                                           bg-linear-to-r from-green-600 to-emerald-500 text-white font-semibold text-sm
+                                                           hover:shadow-lg hover:shadow-emerald-500/30 hover:-translate-y-0.5
+                                                           transition-all group/btn'
+                                            >
+                                                {item.link ? 'View Project' : 'Coming Soon'}
+                                                <ArrowUpRight size={18} className='group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5 transition-transform' />
+                                            </a>
+                                        </div>
+                                    </AnimatedOnScroll>
                                 </div>
                             </div>
                         </AnimatedOnScroll>

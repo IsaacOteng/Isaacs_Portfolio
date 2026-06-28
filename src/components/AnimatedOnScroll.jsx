@@ -30,6 +30,7 @@ const VARIANTS = {
     delay = 0,
     duration = 950,
     once = true,
+    as: Tag = 'div',
     style = {},
     ...props
     }) {
@@ -68,8 +69,8 @@ const VARIANTS = {
     };
 
     return (
-        <div ref={ref} className={className} style={combinedStyle} {...props}>
+        <Tag ref={ref} className={className} style={combinedStyle} {...props}>
         {children}
-        </div>
+        </Tag>
     );
 }
