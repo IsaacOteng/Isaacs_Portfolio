@@ -121,7 +121,7 @@ const Services = () => {
                         >
                             <div className='grid lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-16 items-center'>
                                 {/* Image stack — three duplicates fanned in 3D; hover any card to bring it forward */}
-                                <div className={reversed ? 'lg:order-2 lg:-translate-x-12' : 'lg:-translate-x-10'}>
+                                <div className={`-translate-x-4 lg:translate-x-0 ${reversed ? 'lg:order-2 lg:-translate-x-12' : 'lg:-translate-x-10'}`}>
                                     <AnimatedOnScroll
                                         variant={imgVariant}
                                         delay={0.1}
@@ -132,11 +132,13 @@ const Services = () => {
                                             src={item.projectimage}
                                             alt=''
                                             aria-hidden='true'
-                                            className='absolute inset-0 m-auto w-[82%] h-[80%] object-cover rounded-2xl
-                                                       shadow-xl shadow-black/50 opacity-55 z-10 cursor-pointer
-                                                       transform-[translate(30%,26%)_rotateY(-14deg)_rotateX(6deg)_scale(.9)]
+                                            className='absolute inset-0 m-auto w-[78%] h-[74%] sm:w-[80%] sm:h-[78%] lg:w-[82%] lg:h-[80%]
+                                                       object-cover rounded-2xl shadow-xl shadow-black/50 opacity-55 z-10 cursor-pointer
+                                                       transform-[translate(17%,16%)_rotateY(-12deg)_rotateX(5deg)_scale(.9)]
+                                                       lg:transform-[translate(30%,26%)_rotateY(-14deg)_rotateX(6deg)_scale(.9)]
                                                        hover:z-40 hover:opacity-100
-                                                       hover:transform-[translate(30%,26%)_rotateY(0deg)_rotateX(0deg)_scale(1)]
+                                                       hover:transform-[translate(17%,16%)_rotateY(0deg)_rotateX(0deg)_scale(1)]
+                                                       lg:hover:transform-[translate(30%,26%)_rotateY(0deg)_rotateX(0deg)_scale(1)]
                                                        transition-all duration-500 ease-out'
                                         />
                                         {/* middle card (duplicate) */}
@@ -144,21 +146,25 @@ const Services = () => {
                                             src={item.projectimage}
                                             alt=''
                                             aria-hidden='true'
-                                            className='absolute inset-0 m-auto w-[82%] h-[80%] object-cover rounded-2xl
-                                                       shadow-xl shadow-black/50 opacity-80 z-20 cursor-pointer
-                                                       transform-[translate(15%,13%)_rotateY(-12deg)_rotateX(5deg)_scale(.95)]
+                                            className='absolute inset-0 m-auto w-[78%] h-[74%] sm:w-[80%] sm:h-[78%] lg:w-[82%] lg:h-[80%]
+                                                       object-cover rounded-2xl shadow-xl shadow-black/50 opacity-80 z-20 cursor-pointer
+                                                       transform-[translate(9%,8%)_rotateY(-10deg)_rotateX(4deg)_scale(.95)]
+                                                       lg:transform-[translate(15%,13%)_rotateY(-12deg)_rotateX(5deg)_scale(.95)]
                                                        hover:z-40 hover:opacity-100
-                                                       hover:transform-[translate(15%,13%)_rotateY(0deg)_rotateX(0deg)_scale(1)]
+                                                       hover:transform-[translate(9%,8%)_rotateY(0deg)_rotateX(0deg)_scale(1)]
+                                                       lg:hover:transform-[translate(15%,13%)_rotateY(0deg)_rotateX(0deg)_scale(1)]
                                                        transition-all duration-500 ease-out'
                                         />
                                         {/* front card */}
                                         <img
                                             src={item.projectimage}
                                             alt={item.projectname}
-                                            className='absolute inset-0 m-auto w-[82%] h-[80%] object-cover rounded-2xl
-                                                       ring-2 ring-emerald-400/70 shadow-2xl shadow-emerald-500/20 z-30 cursor-pointer
-                                                       transform-[rotateY(-10deg)_rotateX(3deg)]
+                                            className='absolute inset-0 m-auto w-[78%] h-[74%] sm:w-[80%] sm:h-[78%] lg:w-[82%] lg:h-[80%]
+                                                       object-cover rounded-2xl ring-2 ring-emerald-400/70 shadow-2xl shadow-emerald-500/20 z-30 cursor-pointer
+                                                       transform-[rotateY(-8deg)_rotateX(2deg)]
+                                                       lg:transform-[rotateY(-10deg)_rotateX(3deg)]
                                                        hover:z-40 hover:transform-[rotateY(0deg)_rotateX(0deg)_scale(1.02)]
+                                                       lg:hover:transform-[rotateY(0deg)_rotateX(0deg)_scale(1.02)]
                                                        transition-all duration-500 ease-out'
                                         />
                                     </AnimatedOnScroll>
