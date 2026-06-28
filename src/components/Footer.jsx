@@ -100,7 +100,6 @@ const Footer = () => {
                 <div className='border-t border-gray-300 dark:border-gray-700 pt-8 flex flex-col md:flex-row justify-between items-center text-center md:text-left text-sm text-gray-600 dark:text-gray-400'>
                     <div className='flex items-center gap-2 mb-4 md:mb-0'>
                         <p>© {currentYear} Isaac Oteng. All rights reserved.</p>
-                        <Heart size={14} className='text-green-600 dark:text-green-400' fill='currentColor' />
                     </div>
                     <div className='flex gap-6 flex-wrap justify-center md:justify-end'>
                         <p className='hover:text-green-700 dark:hover:text-green-400 font-medium cursor-default'>Privacy Policy</p>
