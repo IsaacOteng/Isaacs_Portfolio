@@ -1,5 +1,5 @@
 import React from "react";
-import pic from '../assets/pic.png'
+import isaacnobg from '../assets/isaacnobg.png'
 import { Dot, ArrowRight } from "lucide-react";
 import AnimatedOnScroll from './AnimatedOnScroll';
 
@@ -70,7 +70,7 @@ const Intro = () => {
                     delay={0.15}
                 >
                     <img
-                        src={pic}
+                        src={isaacnobg}
                         alt="Isaac Junior"
                         className="w-full max-w-xs
                                     sm:w-md sm:h-md sm:max-w-md

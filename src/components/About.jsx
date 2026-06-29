@@ -25,7 +25,7 @@ import AnimatedOnScroll from './AnimatedOnScroll';
                     About <span className="font-serif-italic font-medium bg-linear-to-r from-green-400 via-emerald-300 to-green-500 bg-clip-text text-transparent gradient-shift">Me</span>
                 </p>
                 <p className="text-base sm:text-lg md:text-xl lg:text-2xl
-                              font-serif text-center max-w-4xl leading-relaxed text-gray-700 dark:text-gray-300">
+                            font-serif text-center max-w-4xl leading-relaxed text-gray-700 dark:text-gray-300">
                     I'm a software engineer who enjoys building practical, well-thought-out solutions. I approach each
                     project with curiosity and enthusiasm, whether I'm developing web applications, designing software systems,
                     or improving existing products.
