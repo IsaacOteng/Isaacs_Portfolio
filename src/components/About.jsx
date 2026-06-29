@@ -37,17 +37,17 @@ import AnimatedOnScroll from './AnimatedOnScroll';
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6
                             bg-linear-to-br from-green-400 via-green-100 to-green-400
-                            dark:from-gray-800 dark:via-gray-900 dark:to-gray-800
+                            dark:from-gray-900 dark:via-gray-800 dark:to-gray-900
                             p-6 rounded-2xl">
                 {aboutdetails.map((item, index) => (
                     <AnimatedOnScroll
                         key={index}
                         className="trace-border min-h-32 rounded-xl
-                                   bg-white dark:bg-gray-800/80
-                                   flex flex-col gap-5 justify-center items-center p-6
-                                   text-center border-2 border-green-100 dark:border-gray-700
-                                   hover:shadow-lg hover:shadow-green-300/30 dark:hover:shadow-green-900/30
-                                   hover:scale-105 glow-green-hover cursor-pointer"
+                                    bg-white dark:bg-gray-950
+                                    flex flex-col gap-5 justify-center items-center p-6
+                                    text-center border-2 border-green-100 dark:border-gray-700
+                                    hover:shadow-lg hover:shadow-green-300/30 dark:hover:shadow-green-900/30
+                                    hover:scale-105 glow-green-hover cursor-pointer"
                         variant={index % 2 === 0 ? 'fade-right' : 'fade-left'}
                         delay={index * 0.06}
                     >

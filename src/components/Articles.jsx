@@ -50,11 +50,11 @@ const Articles = () => {
                     <AnimatedOnScroll
                         key={article.id}
                         className='bg-linear-to-tr from-green-200 via-green-50 to-green-200
-                                   dark:from-gray-800 dark:via-gray-900 dark:to-gray-800
-                                   rounded-2xl border-2 border-gray-200 dark:border-gray-700
-                                   hover:border-green-300 dark:hover:border-green-600
-                                   overflow-hidden hover:shadow-xl hover:shadow-green-200/40 dark:hover:shadow-green-900/20
-                                   hover:scale-105 glow-green-hover cursor-pointer group'
+                                    dark:from-gray-900 dark:via-gray-950 dark:to-gray-900
+                                    rounded-2xl border-2 border-gray-200 dark:border-gray-700
+                                    hover:border-green-300 dark:hover:border-green-600
+                                    overflow-hidden hover:shadow-xl hover:shadow-green-200/40 dark:hover:shadow-green-900/20
+                                    hover:scale-105 glow-green-hover cursor-pointer group'
                         variant={index % 2 === 0 ? 'fade-right' : 'fade-left'}
                         delay={index * 0.06}
                     >

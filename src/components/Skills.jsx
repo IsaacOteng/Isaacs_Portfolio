@@ -44,11 +44,11 @@ const Skills = () => {
 
         <AnimatedOnScroll
             className="bg-linear-to-br from-green-50 to-green-100
-                       dark:from-gray-800 dark:to-gray-900
-                       py-10 border-2 border-green-300 dark:border-gray-700
-                       rounded-3xl hover:shadow-2xl hover:shadow-green-200/50 dark:hover:shadow-green-900/20
-                       hover:border-green-400 dark:hover:border-green-600
-                       glow-green-hover"
+                        dark:from-gray-950 dark:to-gray-950
+                        py-10 border-2 border-green-300 dark:border-gray-700
+                        rounded-3xl hover:shadow-2xl hover:shadow-green-200/50 dark:hover:shadow-green-900/20
+                        hover:border-green-400 dark:hover:border-green-600
+                        glow-green-hover"
             delay={0.05}
         >
           <h1 className="heading-bricolage text-center text-green-700 dark:text-green-400 text-2xl md:text-3xl mb-8">
@@ -69,11 +69,11 @@ const Skills = () => {
 
         <AnimatedOnScroll
             className="bg-linear-to-br from-green-50 to-green-100
-                       dark:from-gray-800 dark:to-gray-900
-                       py-10 border-2 border-green-300 dark:border-gray-700
-                       rounded-3xl hover:shadow-2xl hover:shadow-green-200/50 dark:hover:shadow-green-900/20
-                       hover:border-green-400 dark:hover:border-green-600
-                       glow-green-hover"
+                        dark:from-gray-950 dark:to-gray-950
+                        py-10 border-2 border-green-300 dark:border-gray-700
+                        rounded-3xl hover:shadow-2xl hover:shadow-green-200/50 dark:hover:shadow-green-900/20
+                        hover:border-green-400 dark:hover:border-green-600
+                        glow-green-hover"
             delay={0.12}
         >
           <h1 className="heading-bricolage text-center text-green-700 dark:text-green-400 text-2xl md:text-3xl mb-8">
@@ -94,11 +94,11 @@ const Skills = () => {
 
         <AnimatedOnScroll
             className="bg-linear-to-br from-green-50 to-green-100
-                       dark:from-gray-800 dark:to-gray-900
-                       py-10 border-2 border-green-300 dark:border-gray-700
-                       rounded-3xl hover:shadow-2xl hover:shadow-green-200/50 dark:hover:shadow-green-900/20
-                       hover:border-green-400 dark:hover:border-green-600
-                       glow-green-hover"
+                      dark:from-gray-950 dark:to-gray-950
+                        py-10 border-2 border-green-300 dark:border-gray-700
+                        rounded-3xl hover:shadow-2xl hover:shadow-green-200/50 dark:hover:shadow-green-900/20
+                        hover:border-green-400 dark:hover:border-green-600
+                        glow-green-hover"
             delay={0.19}
         >
           <h1 className="heading-bricolage text-center text-green-700 dark:text-green-400 text-2xl md:text-3xl mb-8">
