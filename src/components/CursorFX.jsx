@@ -14,7 +14,7 @@ const CursorFX = () => {
 
     useEffect(() => {
         // Skip entirely on touch / coarse pointers.
-        if (!window.matchMedia('(pointer: fine)').matches) return 0.65 
+        if (!window.matchMedia('(pointer: fine)').matches) return
 
         const dot = dotRef.current
         const ring = ringRef.current
