@@ -3,10 +3,12 @@ import Homepage from './components/Homepage'
 import ReadArticles from './components/ReadArticles'
 import { Routes, Route } from 'react-router-dom'
 import { ThemeProvider } from './context/ThemeContext'
+import CursorFX from './components/CursorFX'
 
 const App = () => {
   return (
     <ThemeProvider>
+      <CursorFX />
       <Routes>
         <Route path='/' element={<Homepage/>} />
         <Route path='/articles' element={<ReadArticles/>} />
