@@ -83,22 +83,22 @@ const Intro = () => {
 
                 <div
                     className="absolute -bottom-10 md:-bottom-10 left-1/2 -translate-x-1/2
-                                w-full grid grid-cols-3 sm:grid-cols-3 gap-4
+                                w-full grid grid-cols-3 sm:grid-cols-3 gap-2 sm:gap-4
                                 bg-linear-to-b from-transparent to-green-300
                                 dark:from-transparent dark:to-green-950
-                                rounded-3xl p-6 shadow-lg z-30"
+                                rounded-3xl p-3 sm:p-6 shadow-lg z-30"
                 >
-                    <AnimatedOnScroll className="bg-linear-to-br from-gray-800 to-black dark:from-green-800 dark:to-green-900/80 text-white rounded-2xl text-center p-5 hover:scale-105 duration-1000 transition-all" delay={0.25}>
-                        <span className="num-display text-3xl md:text-4xl lg:text-5xl font-bold">3+</span>
-                        <p className="text-gray-400 text-sm md:text-base mt-1">Years of Experience</p>
+                    <AnimatedOnScroll className="bg-linear-to-br from-gray-800 to-black dark:from-green-800 dark:to-green-900/80 text-white rounded-2xl text-center flex flex-col items-center justify-center px-2 py-3 sm:p-5 hover:scale-105 duration-1000 transition-all" delay={0.25}>
+                        <span className="num-display block leading-none text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold">3+</span>
+                        <p className="text-gray-400 text-[10px] uppercase tracking-wider leading-tight mt-1.5 sm:text-sm md:text-base sm:normal-case sm:tracking-normal sm:mt-1">Years of Experience</p>
                     </AnimatedOnScroll>
-                    <AnimatedOnScroll className="bg-linear-to-br from-gray-800 to-black dark:from-green-800 dark:to-green-900/80 text-white rounded-2xl text-center p-5 hover:scale-105 duration-1000 transition-all" delay={0.4}>
-                        <span className="num-display text-3xl md:text-4xl lg:text-5xl font-bold">17+</span>
-                        <p className="text-gray-400 text-sm md:text-base mt-1">Completed Projects</p>
+                    <AnimatedOnScroll className="bg-linear-to-br from-gray-800 to-black dark:from-green-800 dark:to-green-900/80 text-white rounded-2xl text-center flex flex-col items-center justify-center px-2 py-3 sm:p-5 hover:scale-105 duration-1000 transition-all" delay={0.4}>
+                        <span className="num-display block leading-none text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold">17+</span>
+                        <p className="text-gray-400 text-[10px] uppercase tracking-wider leading-tight mt-1.5 sm:text-sm md:text-base sm:normal-case sm:tracking-normal sm:mt-1">Completed Projects</p>
                     </AnimatedOnScroll>
-                    <AnimatedOnScroll className="bg-linear-to-br from-gray-800 to-black dark:from-green-800 dark:to-green-900/80 text-white rounded-2xl text-center p-5 hover:scale-105 duration-1000 transition-all" delay={0.55}>
-                        <span className="num-display text-3xl md:text-4xl lg:text-5xl font-bold">100%</span>
-                        <p className="text-gray-400 text-sm md:text-base mt-1">Client Satisfaction</p>
+                    <AnimatedOnScroll className="bg-linear-to-br from-gray-800 to-black dark:from-green-800 dark:to-green-900/80 text-white rounded-2xl text-center flex flex-col items-center justify-center px-2 py-3 sm:p-5 hover:scale-105 duration-1000 transition-all" delay={0.55}>
+                        <span className="num-display block leading-none text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold">100%</span>
+                        <p className="text-gray-400 text-[10px] uppercase tracking-wider leading-tight mt-1.5 sm:text-sm md:text-base sm:normal-case sm:tracking-normal sm:mt-1">Client Satisfaction</p>
                     </AnimatedOnScroll>
                 </div>
             </div>
