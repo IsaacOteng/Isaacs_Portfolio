@@ -111,10 +111,18 @@
     .animate-blob         { animation: blob 9s ease-in-out infinite; }
 
     /* Custom Scrollbar */
+    /* dark: utilities can't be @apply'd onto ::-webkit-scrollbar-* (the variant
+       lands after the pseudo-element, which is invalid), so use explicit .dark
+       selectors. html.dark::-webkit-... targets the page scrollbar itself. */
+    html       { color-scheme: light; scrollbar-color: var(--color-green-600) var(--color-gray-100); }
+    html.dark  { color-scheme: dark;  scrollbar-color: var(--color-green-600) var(--color-gray-950); }
+
     ::-webkit-scrollbar       { width: 8px; }
-    ::-webkit-scrollbar-track { @apply bg-gray-100 dark:bg-gray-900; }
-    ::-webkit-scrollbar-thumb { @apply bg-green-600 rounded-full; }
-    ::-webkit-scrollbar-thumb:hover { @apply bg-green-700; }
+    ::-webkit-scrollbar-track { background: var(--color-gray-100); }
+    html.dark::-webkit-scrollbar-track,
+    .dark ::-webkit-scrollbar-track { background: var(--color-gray-950); }
+    ::-webkit-scrollbar-thumb { background: var(--color-green-600); border-radius: 9999px; }
+    ::-webkit-scrollbar-thumb:hover { background: var(--color-green-700); }
 
     /* Smooth Transitions */
     * { @apply transition-all duration-300 ease-out; }

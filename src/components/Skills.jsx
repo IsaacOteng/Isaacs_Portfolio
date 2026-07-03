@@ -4,29 +4,42 @@ import AnimatedOnScroll from './AnimatedOnScroll';
 
 const Skills = () => {
   const frontend = [
-    { language: "HTML",          level: "Experienced" },
-    { language: "CSS",           level: "Experienced" },
-    { language: "React",         level: "Experienced" },
-    { language: "Next.js",       level: "Experienced" },
-    { language: "JavaScript",    level: "Experienced" },
-    { language: "Tailwind",      level: "Experienced" },
-    { language: "Framer Motion", level: "Experienced" },
-    { language: "Bootstrap",     level: "Experienced" },
+    { language: "HTML",           level: "Experienced" },
+    { language: "CSS",            level: "Experienced" },
+    { language: "React",          level: "Experienced" },
+    { language: "Next.js",        level: "Experienced" },
+    { language: "JavaScript",     level: "Experienced" },
+    { language: "Tailwind",       level: "Experienced" },
+    { language: "Framer Motion",  level: "Experienced" },
+    { language: "Bootstrap",      level: "Experienced" },
+    { language: "Vite",           level: "Experienced" },
+    { language: "React Router",   level: "Experienced" },
+    { language: "TanStack Query", level: "Intermediate" },
   ];
 
   const backend = [
-    { language: "Python",     level: "Experienced" },
-    { language: "Django",     level: "Experienced" },
-    { language: "Node.js",    level: "Intermediate" },
-    { language: "MySQL",      level: "Experienced" },
-    { language: "PostgreSQL", level: "Intermediate" },
+    { language: "Python",          level: "Experienced" },
+    { language: "Django",          level: "Experienced" },
+    { language: "Django REST",     level: "Experienced" },
+    { language: "Django Channels", level: "Intermediate" },
+    { language: "Node.js",         level: "Intermediate" },
+    { language: "MySQL",           level: "Experienced" },
+    { language: "PostgreSQL",      level: "Experienced" },
+    { language: "SQLite",          level: "Experienced" },
+    { language: "Redis",           level: "Experienced" },
   ];
 
   const tools = [
-    { language: "Git",    level: "Experienced" },
-    { language: "Docker", level: "Novice" },
-    { language: "VS Code",level: "Experienced" },
-    { language: "Figma",  level: "Novice" },
+    { language: "Git",           level: "Experienced" },
+    { language: "Docker",        level: "Intermediate" },
+    { language: "VS Code",       level: "Experienced" },
+    { language: "Figma",         level: "Novice" },
+    { language: "Firebase Auth", level: "Experienced" },
+    { language: "Paystack",      level: "Experienced" },
+    { language: "Cloudflare R2", level: "Experienced" },
+    { language: "Sentry",        level: "Intermediate" },
+    { language: "Render",        level: "Experienced" },
+    { language: "Vercel",        level: "Experienced" },
   ];
 
   return (
@@ -54,13 +67,13 @@ const Skills = () => {
           <h1 className="heading-bricolage text-center text-green-700 dark:text-green-400 text-2xl md:text-3xl mb-8">
             Frontend Development
           </h1>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 px-6">
+          <div className="grid grid-cols-2 gap-x-3 gap-y-5 sm:gap-6 px-5 sm:px-6">
             {frontend.map((item, index) => (
               <div key={index} className="flex gap-3 items-start hover:translate-x-1 hover:scale-x-105">
                 <Verified color="white" fill="green" size={20} className="shrink-0" />
                 <div>
-                  <p className="font-bold text-base md:text-lg text-gray-800 dark:text-gray-100">{item.language}</p>
-                  <p className="text-gray-600 dark:text-gray-400 text-sm md:text-base">{item.level}</p>
+                  <p className="font-bold text-sm sm:text-base md:text-lg text-gray-800 dark:text-gray-100">{item.language}</p>
+                  <p className="text-gray-600 dark:text-gray-400 text-xs sm:text-sm md:text-base">{item.level}</p>
                 </div>
               </div>
             ))}
@@ -79,13 +92,13 @@ const Skills = () => {
           <h1 className="heading-bricolage text-center text-green-700 dark:text-green-400 text-2xl md:text-3xl mb-8">
             Backend Development
           </h1>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 px-6">
+          <div className="grid grid-cols-2 gap-x-3 gap-y-5 sm:gap-6 px-5 sm:px-6">
             {backend.map((item, index) => (
               <div key={index} className="flex gap-3 items-start hover:translate-x-1 hover:scale-x-105">
                 <Verified color="white" fill="green" size={20} className="shrink-0" />
                 <div>
-                  <p className="font-bold text-base md:text-lg text-gray-800 dark:text-gray-100">{item.language}</p>
-                  <p className="text-gray-600 dark:text-gray-400 text-sm md:text-base">{item.level}</p>
+                  <p className="font-bold text-sm sm:text-base md:text-lg text-gray-800 dark:text-gray-100">{item.language}</p>
+                  <p className="text-gray-600 dark:text-gray-400 text-xs sm:text-sm md:text-base">{item.level}</p>
                 </div>
               </div>
             ))}
@@ -104,13 +117,13 @@ const Skills = () => {
           <h1 className="heading-bricolage text-center text-green-700 dark:text-green-400 text-2xl md:text-3xl mb-8">
             Tools &amp; Platforms
           </h1>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 px-6">
+          <div className="grid grid-cols-2 gap-x-3 gap-y-5 sm:gap-6 px-5 sm:px-6">
             {tools.map((item, index) => (
               <div key={index} className="flex gap-3 items-start hover:translate-x-1 hover:scale-x-105">
                 <Verified color="white" fill="green" size={20} className="shrink-0" />
                 <div>
-                  <p className="font-bold text-base md:text-lg text-gray-800 dark:text-gray-100">{item.language}</p>
-                  <p className="text-gray-600 dark:text-gray-400 text-sm md:text-base">{item.level}</p>
+                  <p className="font-bold text-sm sm:text-base md:text-lg text-gray-800 dark:text-gray-100">{item.language}</p>
+                  <p className="text-gray-600 dark:text-gray-400 text-xs sm:text-sm md:text-base">{item.level}</p>
                 </div>
               </div>
             ))}
