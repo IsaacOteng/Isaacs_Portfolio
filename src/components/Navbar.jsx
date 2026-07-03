@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react'
 import { FileText, Github, HomeIcon, Twitter, Menu, X, Moon, Sun } from 'lucide-react'
-import { useTheme } from '../context/ThemeContext'
+import { useTheme } from '../context/theme'
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false)
