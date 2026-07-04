@@ -22,7 +22,9 @@
     }
 
     body {
-        @apply bg-white text-gray-900;
+        /* dark bg on body itself, not just the app wrapper — the scrollbar
+           gutter and overscroll areas show the body canvas */
+        @apply bg-white text-gray-900 dark:bg-gray-950 dark:text-gray-100;
         font-family: var(--font-sans);
         font-feature-settings: "ss01", "ss02", "cv11";
         letter-spacing: -0.01em;
@@ -114,15 +116,22 @@
     /* dark: utilities can't be @apply'd onto ::-webkit-scrollbar-* (the variant
        lands after the pseudo-element, which is invalid), so use explicit .dark
        selectors. html.dark::-webkit-... targets the page scrollbar itself. */
-    html       { color-scheme: light; scrollbar-color: var(--color-green-600) var(--color-gray-100); }
-    html.dark  { color-scheme: dark;  scrollbar-color: var(--color-green-600) var(--color-gray-950); }
+    html       { color-scheme: light; }
+    html.dark  { color-scheme: dark; }
+
+    /* scrollbar-color only where ::-webkit-scrollbar isn't supported (Firefox):
+       in Chromium, setting it disables the custom webkit scrollbar styling below. */
+    @supports not selector(::-webkit-scrollbar) {
+        html      { scrollbar-color: var(--color-green-600) var(--color-gray-100); }
+        html.dark { scrollbar-color: var(--color-green-600) var(--color-gray-950); }
+    }
 
     ::-webkit-scrollbar       { width: 8px; }
-    ::-webkit-scrollbar-track { background: var(--color-gray-100); }
+    ::-webkit-scrollbar-track { background: var(--color-gray-100, #f3f4f6); }
     html.dark::-webkit-scrollbar-track,
-    .dark ::-webkit-scrollbar-track { background: var(--color-gray-950); }
-    ::-webkit-scrollbar-thumb { background: var(--color-green-600); border-radius: 9999px; }
-    ::-webkit-scrollbar-thumb:hover { background: var(--color-green-700); }
+    .dark ::-webkit-scrollbar-track { background: var(--color-gray-950, #030712); }
+    ::-webkit-scrollbar-thumb { background: var(--color-green-600, #16a34a); border-radius: 9999px; }
+    ::-webkit-scrollbar-thumb:hover { background: var(--color-green-700, #15803d); }
 
     /* Smooth Transitions */
     * { @apply transition-all duration-300 ease-out; }
