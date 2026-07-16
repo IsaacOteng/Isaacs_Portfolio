@@ -3,15 +3,33 @@ import React from 'react'
 import AnimatedOnScroll from './AnimatedOnScroll'
 import mediaapi from '../assets/mediaapi.png'
 import nextstep from '../assets/nextstep.png'
-import finalocs from '../assets/finalocs.png'
-import extension from '../assets/extension.png'
+import finalocs from '../assets/finalocs1.png'
+import finalocs2 from '../assets/finalocs2.png'
+import finalocs3 from '../assets/finalocs3.png'
 import tertitask from '../assets/tertitask.png'
 import traveltogether from '../assets/traveltogether.png'
+import snapseekmatched from '../assets/snapseekimage12.png'
+import snapseekdashboard from '../assets/snapseekimage3.png'
+import snapseekupload from '../assets/snapseekimage11.png'
 
 
 const Services = () => {
 
     const projectcards = [
+        {
+            projectname : "Snapseek",
+            projectimage: [snapseekmatched, snapseekdashboard, snapseekupload],
+            meta: "Ghana · Accra · 2026",
+            projectdescription : "A smart photo retrieval platform for event photography guests find and download their own photos from large event galleries using face recognition, while every photo stays in the photographer's own cloud storage(google drive, dropbox, ...)",
+            link : "https://github.com/IsaacOteng/Snapseek_public",
+            features: [
+                "Face recognition photo matching with InsightFace (SCRFD detection)",
+                "Reads directly from the photographer's cloud storage (Google Drive, Dropbox) photos are never stored",
+                "Photographer dashboard and guest self-service download flow",
+                "Background face indexing pipeline powered by Celery and Redis",
+            ],
+            tags: ["Django", "React", "Celery", "InsightFace", "Cloud Storage"]
+        },
         {
             projectname : "Tertitask",
             projectimage: tertitask,
@@ -42,7 +60,7 @@ const Services = () => {
         },
         {
             projectname : "finalocs",
-            projectimage: finalocs,
+            projectimage: [finalocs, finalocs2, finalocs3],
             meta: "Ghana · Accra · 2025",
             projectdescription : "The official booking website for Fina Locs a brand-focused storefront where clients browse services and book appointments through a streamlined checkout.",
             link : "https://finalocs.com/",
@@ -65,19 +83,6 @@ const Services = () => {
                 "Live music data integration",
             ],
             tags: ["React", "API", "Spotify"]
-        },
-        {
-            projectname : "Browser Extensions",
-            projectimage: extension,
-            meta: "Web · UI/UX · 2024",
-            projectdescription : "An extension manager UI for the browser a polished toggle interface for enabling or disabling extensions at a glance, with accessibility baked in.",
-            link : "https://github.com/IsaacOteng/Browser_Extension_UI",
-            features: [
-                "Toggle UI to enable or disable browser extensions",
-                "Accessible, keyboard-friendly controls",
-                "Pixel-perfect responsive design",
-            ],
-            tags: ["JavaScript", "Browser", "UI/UX"]
         },
         {
             projectname : "Next Step",
@@ -109,6 +114,10 @@ const Services = () => {
                     const reversed = index % 2 === 1
                     const imgVariant = reversed ? 'fade-right' : 'fade-left'
                     const textVariant = reversed ? 'fade-left' : 'fade-right'
+                    // projectimage: single image (duplicated across the stack) or [front, middle, back]
+                    const [frontImg, middleImg, backImg] = Array.isArray(item.projectimage)
+                        ? item.projectimage
+                        : [item.projectimage, item.projectimage, item.projectimage]
                     return (
                         <AnimatedOnScroll
                             key={index}
@@ -120,16 +129,16 @@ const Services = () => {
                             delay={index * 0.05}
                         >
                             <div className='grid lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-16 items-center'>
-                                {/* Image stack three duplicates fanned in 3D; hover any card to bring it forward */}
+                                {/* Image stack fanned in 3D; hover any card to bring it forward */}
                                 <div className={`-translate-x-4 lg:translate-x-0 ${reversed ? 'lg:order-2 lg:-translate-x-12' : 'lg:-translate-x-10'}`}>
                                     <AnimatedOnScroll
                                         variant={imgVariant}
                                         delay={0.1}
                                         className='relative h-64 sm:h-80 lg:h-112 py-4 px-2 sm:px-6 perspective-[1800px]'
                                     >
-                                        {/* back card (duplicate) */}
+                                        {/* back card */}
                                         <img
-                                            src={item.projectimage}
+                                            src={backImg}
                                             alt=''
                                             aria-hidden='true'
                                             className='absolute inset-0 m-auto w-[78%] h-[74%] sm:w-[80%] sm:h-[78%] lg:w-[82%] lg:h-[80%]
@@ -141,9 +150,9 @@ const Services = () => {
                                                         lg:hover:transform-[translate(30%,26%)_rotateY(0deg)_rotateX(0deg)_scale(1)]
                                                         transition-all duration-500 ease-out'
                                         />
-                                        {/* middle card (duplicate) */}
+                                        {/* middle card */}
                                         <img
-                                            src={item.projectimage}
+                                            src={middleImg}
                                             alt=''
                                             aria-hidden='true'
                                             className='absolute inset-0 m-auto w-[78%] h-[74%] sm:w-[80%] sm:h-[78%] lg:w-[82%] lg:h-[80%]
@@ -157,7 +166,7 @@ const Services = () => {
                                         />
                                         {/* front card */}
                                         <img
-                                            src={item.projectimage}
+                                            src={frontImg}
                                             alt={item.projectname}
                                             className='absolute inset-0 m-auto w-[78%] h-[74%] sm:w-[80%] sm:h-[78%] lg:w-[82%] lg:h-[80%]
                                                         object-cover rounded-2xl ring-2 ring-emerald-400/70 shadow-2xl shadow-emerald-500/20 z-30 cursor-pointer
