@@ -60,11 +60,11 @@ const Contact = () => {
                                 key={index}
                                 variant='fade-left'
                                 className='bg-linear-to-t from-green-200 to-white
-                                           dark:from-gray-800 dark:to-gray-900
-                                           rounded-2xl border-2 border-green-200 dark:border-gray-700
-                                           hover:border-green-400 dark:hover:border-green-600
-                                           hover:shadow-lg hover:shadow-green-200/40 dark:hover:shadow-green-900/20
-                                           hover:scale-[1.02] glow-green-hover'
+                                            dark:from-gray-800 dark:to-gray-900
+                                            rounded-2xl border-2 border-green-200 dark:border-gray-700
+                                            hover:border-green-400 dark:hover:border-green-600
+                                            hover:shadow-lg hover:shadow-green-200/40 dark:hover:shadow-green-900/20
+                                            hover:scale-[1.02] glow-green-hover'
                                 delay={index * 0.06}
                             >
                                 <a href={method.link} className='flex items-center gap-4 p-5'>
@@ -82,7 +82,7 @@ const Contact = () => {
                         <AnimatedOnScroll
                             variant='fade-left'
                             className='rounded-2xl border-2 border-dashed border-green-300 dark:border-gray-700 p-5
-                                       flex items-center justify-between gap-4'
+                                        flex items-center justify-between gap-4'
                             delay={0.18}
                         >
                             <p className='text-gray-600 dark:text-gray-400 text-sm'>Prefer a quick call?</p>
@@ -98,9 +98,9 @@ const Contact = () => {
                     <AnimatedOnScroll
                         variant='fade-right'
                         className='lg:col-span-3 bg-linear-to-br from-white to-green-200
-                                   dark:from-gray-800 dark:to-gray-900
-                                   rounded-2xl border-2 border-green-200 dark:border-gray-700
-                                   p-6 md:p-8'
+                                    dark:from-gray-800 dark:to-gray-900
+                                    rounded-2xl border-2 border-green-200 dark:border-gray-700
+                                    p-6 md:p-8'
                         delay={0.06}
                     >
                         <div className='flex items-center gap-3 mb-6'>
@@ -128,11 +128,11 @@ const Contact = () => {
                                             required
                                             placeholder={field.placeholder}
                                             className='w-full px-4 py-2.5 border-2 border-gray-300 dark:border-gray-600
-                                                       bg-white dark:bg-gray-700/60
-                                                       text-gray-900 dark:text-gray-100
-                                                       placeholder-gray-400 dark:placeholder-gray-500
-                                                       rounded-lg focus:outline-none focus:border-green-500 dark:focus:border-green-400
-                                                       focus:ring-2 focus:ring-green-500/20'
+                                                        bg-white dark:bg-gray-700/60
+                                                        text-gray-900 dark:text-gray-100
+                                                        placeholder-gray-400 dark:placeholder-gray-500
+                                                        rounded-lg focus:outline-none focus:border-green-500 dark:focus:border-green-400
+                                                        focus:ring-2 focus:ring-green-500/20'
                                         />
                                     </div>
                                 ))}
@@ -145,11 +145,11 @@ const Contact = () => {
                                     required
                                     placeholder='Project inquiry'
                                     className='w-full px-4 py-2.5 border-2 border-gray-300 dark:border-gray-600
-                                               bg-white dark:bg-gray-700/60
-                                               text-gray-900 dark:text-gray-100
-                                               placeholder-gray-400 dark:placeholder-gray-500
-                                               rounded-lg focus:outline-none focus:border-green-500 dark:focus:border-green-400
-                                               focus:ring-2 focus:ring-green-500/20'
+                                                bg-white dark:bg-gray-700/60
+                                                text-gray-900 dark:text-gray-100
+                                                placeholder-gray-400 dark:placeholder-gray-500
+                                                rounded-lg focus:outline-none focus:border-green-500 dark:focus:border-green-400
+                                                focus:ring-2 focus:ring-green-500/20'
                                 />
                             </div>
                             <div>
@@ -160,19 +160,19 @@ const Contact = () => {
                                     placeholder='Tell me about your project...'
                                     rows='4'
                                     className='w-full px-4 py-2.5 border-2 border-gray-300 dark:border-gray-600
-                                               bg-white dark:bg-gray-700/60
-                                               text-gray-900 dark:text-gray-100
-                                               placeholder-gray-400 dark:placeholder-gray-500
-                                               rounded-lg focus:outline-none focus:border-green-500 dark:focus:border-green-400
-                                               focus:ring-2 focus:ring-green-500/20 resize-none'
+                                                bg-white dark:bg-gray-700/60
+                                                text-gray-900 dark:text-gray-100
+                                                placeholder-gray-400 dark:placeholder-gray-500
+                                                rounded-lg focus:outline-none focus:border-green-500 dark:focus:border-green-400
+                                                focus:ring-2 focus:ring-green-500/20 resize-none'
                                 />
                             </div>
 
                             <button
                                 type='submit'
                                 className='w-full py-3 bg-linear-to-r from-green-600 to-green-700 text-white font-bold cursor-pointer rounded-lg
-                                           hover:shadow-lg hover:shadow-green-600/30 hover:from-green-700 hover:to-green-800
-                                           hover:-translate-y-0.5 flex items-center justify-center gap-2 group'
+                                            hover:shadow-lg hover:shadow-green-600/30 hover:from-green-700 hover:to-green-800
+                                            hover:-translate-y-0.5 flex items-center justify-center gap-2 group'
                             >
                                 <Send size={20} className='group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform' />
                                 Send Message

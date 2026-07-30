@@ -56,11 +56,11 @@ const Testimonials = () => {
                     <AnimatedOnScroll
                         key={testimonial.id}
                         className='bg-linear-to-b from-green-200 via-green-50 to-green-200
-                                   dark:from-gray-800 dark:via-gray-900 dark:to-gray-800
-                                   rounded-2xl border-2 border-green-200 dark:border-gray-700
-                                   p-8 hover:shadow-xl hover:shadow-green-200/40 dark:hover:shadow-green-900/20
-                                   hover:border-green-400 dark:hover:border-green-600
-                                   glow-green-hover hover:-translate-y-1'
+                                    dark:from-gray-800 dark:via-gray-900 dark:to-gray-800
+                                    rounded-2xl border-2 border-green-200 dark:border-gray-700
+                                    p-8 hover:shadow-xl hover:shadow-green-200/40 dark:hover:shadow-green-900/20
+                                    hover:border-green-400 dark:hover:border-green-600
+                                    glow-green-hover hover:-translate-y-1'
                         delay={i * 0.06}
                     >
                         <Quote className='text-green-200 dark:text-green-800 mb-4' size={32} />
